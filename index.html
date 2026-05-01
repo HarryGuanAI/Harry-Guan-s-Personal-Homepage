@@ -329,7 +329,7 @@
         <nav className="fixed top-4 left-0 right-0 z-50 px-8 lg:px-16">
           <div className="mx-auto flex max-w-7xl items-center justify-between">
             <a href="#hero" className="liquid-glass flex h-12 w-12 items-center justify-center rounded-full text-3xl italic leading-none text-white font-heading" aria-label="Astro home">
-              a
+              <span className="-translate-y-0.5">g</span>
             </a>
             <div className="liquid-glass hidden items-center rounded-full px-1.5 py-1.5 md:flex">
               {links.map((link) => (
@@ -360,12 +360,13 @@
           <div className="relative z-10 flex min-h-screen w-full flex-col">
             <Navbar />
             <div className="flex flex-1 items-center justify-start px-8 pt-24 text-left md:px-16 lg:px-20">
-              <div className="flex max-w-[48rem] flex-col items-start">
-                <motion.div {...entrance} transition={{ ...entrance.transition, delay: 0.4 }} className="liquid-glass mb-5 flex self-center items-center gap-3 rounded-full px-1.5 py-1.5 font-body">
-                  <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-black">New</span>
-                  <span className="pr-3 text-sm text-white/90">Maiden Crewed Voyage to Mars Arrives 2026</span>
-                </motion.div>
-
+              <div className="flex w-full flex-col items-start">
+                <div className="mb-5 flex w-full justify-center">
+                  <motion.div {...entrance} transition={{ ...entrance.transition, delay: 0.4 }} className="liquid-glass flex items-center gap-3 rounded-full px-1.5 py-1.5 font-body">
+                    <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-black">New</span>
+                    <span className="pr-3 text-sm text-white/90 whitespace-nowrap">Maiden Crewed Voyage to Mars Arrives 2026</span>
+                  </motion.div>
+                </div>
                 <BlurText
                   text="Venture Past Our Sky Across the Universe"
                   className="hero-title max-w-[42rem] justify-start text-5xl font-heading italic leading-[0.86] tracking-[-3px] text-white md:text-6xl lg:text-[4.75rem]"
