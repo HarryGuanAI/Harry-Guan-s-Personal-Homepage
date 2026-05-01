@@ -324,7 +324,7 @@
     };
 
     function Navbar() {
-      const links = ["Home", "Voyages", "Worlds", "Innovation", "Plan Launch"];
+      const links = ["Home", "About", "Projects", "Resume", "WeChat"];
       return (
         <nav className="fixed top-4 left-0 right-0 z-50 px-8 lg:px-16">
           <div className="mx-auto flex max-w-7xl items-center justify-between">
@@ -353,13 +353,12 @@
         <section id="hero" className="relative flex min-h-screen overflow-hidden bg-black">
           <FadingVideo
             src="https://stream.mux.com/O9KR2ldtszUeixlGSG01vh164FE7WxayyiOuKPGNKJMU.m3u8"
-            className="absolute left-1/2 top-0 z-0 -translate-x-1/2 object-cover object-top"
-            style={{ width: "120%", height: "120%" }}
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
             seamlessLoop
           />
           <div className="relative z-10 flex min-h-screen w-full flex-col">
             <Navbar />
-            <div className="flex flex-1 items-center justify-start px-8 pt-24 text-left md:px-16 lg:px-20">
+            <div className="flex flex-1 items-start justify-start px-8 pt-28 text-left md:px-16 lg:px-20 lg:pt-32">
               <div className="flex w-full flex-col items-start">
                 <div className="mb-5 flex w-full justify-center">
                   <motion.div {...entrance} transition={{ ...entrance.transition, delay: 0.4 }} className="liquid-glass flex items-center gap-3 rounded-full px-1.5 py-1.5 font-body">
@@ -367,50 +366,23 @@
                     <span className="pr-3 text-sm text-white/90 whitespace-nowrap">Maiden Crewed Voyage to Mars Arrives 2026</span>
                   </motion.div>
                 </div>
-                <BlurText
-                  text="Venture Past Our Sky Across the Universe"
-                  className="hero-title max-w-[42rem] justify-start text-5xl font-heading italic leading-[0.86] tracking-[-3px] text-white md:text-6xl lg:text-[4.75rem]"
-                  align="left"
-                />
+                <motion.h1
+                  {...entrance}
+                  transition={{ ...entrance.transition, delay: 0.55 }}
+                  className="hero-title max-w-[36rem] text-left font-heading text-5xl italic leading-[0.86] tracking-[-2px] text-white md:text-[3.4rem] lg:text-[3.85rem]"
+                >
+                  <span className="block">Building useful AI products with LLM, AI Agent and prompt design</span>
+                  <span className="mt-3 block max-w-[31rem] text-4xl leading-[0.9] tracking-[-1.5px] text-white/90 md:text-[2.65rem] lg:text-[2.8rem]">
+                    Exploring the underlying principles of artificial intelligence
+                  </span>
+                </motion.h1>
 
-                <motion.p {...entrance} transition={{ ...entrance.transition, delay: 0.8 }} className="mt-4 max-w-[42rem] text-sm font-light leading-tight text-white font-body md:text-base">
-                  Discover the universe in ways once unimaginable. Our pioneering vessels and breakthrough engineering bring deep-space exploration within reach—secure and extraordinary.
+                <motion.p {...entrance} transition={{ ...entrance.transition, delay: 0.8 }} className="mt-4 max-w-[46rem] text-sm font-light leading-tight text-white font-body md:text-base">
+                  I’m an AI enthusiast skilled in AI application development, familiar with LLM fundamentals, AI agent logic and prompt engineering. Aiming to create real-world, usable artificial intelligence solutions.
                 </motion.p>
 
-                <motion.div {...entrance} transition={{ ...entrance.transition, delay: 1.1 }} className="mt-6 flex items-center gap-6">
-                  <a href="#capabilities" className="liquid-glass-strong flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white font-body">
-                    Start Your Voyage <ArrowUpRight className="h-5 w-5" />
-                  </a>
-                  <a href="#capabilities" className="flex items-center gap-2 text-sm font-medium text-white font-body">
-                    View Liftoff <PlayIcon className="h-4 w-4" />
-                  </a>
-                </motion.div>
-
-                <motion.div {...entrance} transition={{ ...entrance.transition, delay: 1.3 }} className="mt-8 flex flex-col items-stretch gap-4 sm:flex-row">
-                  {[
-                    { icon: <OutlineClockIcon />, value: "34.5 Min", label: "Average Videos Watch Time" },
-                    { icon: <OutlineGlobeIcon />, value: "2.8B+", label: "Users Across the Globe" },
-                  ].map((stat) => (
-                    <div key={stat.value} className="liquid-glass flex w-[220px] flex-col rounded-[1.25rem] p-5 text-left">
-                      <div>{stat.icon}</div>
-                      <div className="mt-8 text-4xl italic leading-none tracking-[-1px] text-white font-heading">{stat.value}</div>
-                      <div className="mt-2 text-xs font-light text-white font-body">{stat.label}</div>
-                    </div>
-                  ))}
-                </motion.div>
               </div>
             </div>
-
-            <motion.div {...entrance} transition={{ ...entrance.transition, delay: 1.4 }} className="flex flex-col items-center gap-4 pb-8">
-              <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-body">
-                Collaborating with top aerospace pioneers globally
-              </div>
-              <div className="flex flex-wrap justify-center gap-8 text-2xl italic tracking-tight text-white font-heading md:gap-16 md:text-3xl">
-                {["Aeon", "Vela", "Apex", "Orbit", "Zeno"].map((name) => (
-                  <span key={name}>{name}</span>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </section>
       );
