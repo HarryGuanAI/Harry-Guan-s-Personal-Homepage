@@ -6,7 +6,7 @@
   <title>Contact Me</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -96,29 +96,81 @@
         transform: none;
       }
     }
+
+    .mobile-nav-panel {
+      max-height: calc(100vh - 6rem);
+      overflow-y: auto;
+    }
+
+    .lang-zh,
+    .lang-zh .font-body,
+    .lang-zh .font-heading {
+      font-family: "Noto Serif SC", "Songti SC", "SimSun", serif !important;
+      font-style: normal;
+      letter-spacing: 0 !important;
+    }
+
+    .lang-zh .font-heading {
+      font-weight: 500;
+    }
+
+    .lang-zh .brand-mark {
+      font-family: "Instrument Serif", serif !important;
+      font-style: italic;
+    }
   </style>
 </head>
 <body class="bg-black text-white">
-  <nav class="fixed left-0 right-0 top-4 z-[9999] px-8 lg:px-16">
-    <div class="mx-auto flex max-w-7xl items-center justify-between">
-      <a href="index.html#hero" class="liquid-glass flex h-12 w-12 items-center justify-center rounded-full text-3xl italic leading-none text-white font-heading" aria-label="Home">
+  <nav class="fixed left-0 right-0 top-4 z-[9999] px-4 md:px-8 lg:px-16">
+    <div class="relative mx-auto flex max-w-7xl items-center justify-between gap-3">
+      <a href="index.html#hero" class="liquid-glass brand-mark flex h-12 w-12 items-center justify-center rounded-full text-3xl italic leading-none text-white font-heading" aria-label="Home">
         <span class="-translate-y-0.5">g</span>
       </a>
-      <div class="liquid-glass hidden items-center rounded-full px-1.5 py-1.5 md:flex">
-        <a href="index.html#hero" class="px-3 py-2 text-sm font-medium text-white/90 font-body">Home</a>
-        <a href="index.html#capabilities" class="px-3 py-2 text-sm font-medium text-white/90 font-body">About Me</a>
-        <a href="index.html#projects" class="px-3 py-2 text-sm font-medium text-white/90 font-body">Projects</a>
-        <a href="Files/resume.pdf" download="Resume.pdf" class="px-3 py-2 text-sm font-medium text-white/90 font-body">Resume</a>
-        <a href="index.html#hobbies" class="px-3 py-2 text-sm font-medium text-white/90 font-body">Hobbies</a>
+      <div class="liquid-glass absolute left-1/2 hidden -translate-x-1/2 items-center rounded-full px-1.5 py-1.5 lg:flex">
+        <a href="index.html#hero" class="px-3 py-2 text-sm font-medium text-white/90 font-body whitespace-nowrap" data-i18n="nav.home">Home</a>
+        <a href="index.html#capabilities" class="px-3 py-2 text-sm font-medium text-white/90 font-body whitespace-nowrap" data-i18n="nav.about">About Me</a>
+        <a href="index.html#projects" class="px-3 py-2 text-sm font-medium text-white/90 font-body whitespace-nowrap" data-i18n="nav.projects">Projects</a>
+        <a href="Files/resume.pdf" download="Resume.pdf" class="px-3 py-2 text-sm font-medium text-white/90 font-body whitespace-nowrap" data-i18n="nav.resume">Resume</a>
+        <a href="index.html#hobbies" class="px-3 py-2 text-sm font-medium text-white/90 font-body whitespace-nowrap" data-i18n="nav.hobbies">Hobbies</a>
+        <button class="lang-toggle ml-1 rounded-full px-3 py-2 text-sm font-semibold text-white/95 font-body" type="button" aria-label="Switch language">中文</button>
         <a href="contact.html" class="ml-1 flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black font-body whitespace-nowrap">
-          Contact Me
+          <span data-i18n="nav.contact">Contact Me</span>
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M7 17L17 7"></path>
             <path d="M7 7h10v10"></path>
           </svg>
         </a>
       </div>
-      <div class="h-12 w-12" aria-hidden="true"></div>
+      <div class="flex items-center gap-2 lg:hidden">
+        <button class="lang-toggle liquid-glass flex h-12 min-w-12 items-center justify-center rounded-full px-3 text-sm font-semibold text-white font-body" type="button" aria-label="Switch language">中文</button>
+        <button id="mobile-menu-toggle" class="liquid-glass flex h-12 w-12 items-center justify-center rounded-full text-white" type="button" aria-label="Menu" aria-expanded="false">
+          <svg id="menu-icon" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+          <svg id="close-icon" class="hidden h-5 w-5 rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 5v14"></path>
+            <path d="M5 12h14"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-nav-panel" class="mobile-nav-panel liquid-glass mx-auto mt-3 hidden max-w-7xl rounded-[1.25rem] p-3 lg:hidden">
+      <div class="grid gap-1">
+        <a href="index.html#hero" class="mobile-nav-link rounded-[0.9rem] px-4 py-3 text-base font-medium text-white/92 font-body" data-i18n="nav.home">Home</a>
+        <a href="index.html#capabilities" class="mobile-nav-link rounded-[0.9rem] px-4 py-3 text-base font-medium text-white/92 font-body" data-i18n="nav.about">About Me</a>
+        <a href="index.html#projects" class="mobile-nav-link rounded-[0.9rem] px-4 py-3 text-base font-medium text-white/92 font-body" data-i18n="nav.projects">Projects</a>
+        <a href="Files/resume.pdf" download="Resume.pdf" class="mobile-nav-link rounded-[0.9rem] px-4 py-3 text-base font-medium text-white/92 font-body" data-i18n="nav.resume">Resume</a>
+        <a href="index.html#hobbies" class="mobile-nav-link rounded-[0.9rem] px-4 py-3 text-base font-medium text-white/92 font-body" data-i18n="nav.hobbies">Hobbies</a>
+        <a href="contact.html" class="mobile-nav-link mt-1 flex items-center justify-between rounded-[0.9rem] bg-white px-4 py-3 text-base font-semibold text-black font-body">
+          <span data-i18n="nav.contact">Contact Me</span>
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 17L17 7"></path>
+            <path d="M7 7h10v10"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -137,9 +189,9 @@
 
     <section class="relative z-10 mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
       <div>
-        <p class="text-sm font-medium uppercase tracking-[0.18em] text-white/45 font-body">Contact</p>
-        <h1 class="mt-4 text-6xl italic leading-[0.9] tracking-[-3px] text-white font-heading md:text-7xl lg:text-[5.25rem]">Contact Me</h1>
-        <p class="mt-4 max-w-[34rem] text-base font-light leading-snug text-white/72 font-body md:text-lg">
+        <p class="text-sm font-medium uppercase tracking-[0.18em] text-white/45 font-body" data-i18n="contact.eyebrow">Contact</p>
+        <h1 class="mt-4 text-6xl italic leading-[0.9] tracking-[-3px] text-white font-heading md:text-7xl lg:text-[5.25rem]" data-i18n="contact.title">Contact Me</h1>
+        <p class="mt-4 max-w-[34rem] text-base font-light leading-snug text-white/72 font-body md:text-lg" data-i18n="contact.intro">
           Find me on social platforms, or scan the WeChat QR code for direct contact.
         </p>
       </div>
@@ -149,9 +201,9 @@
             <img src="Images/contact/wechat-qr.jpg" alt="WeChat QR code" class="w-full rounded-[0.75rem]" />
           </div>
           <div>
-            <span class="liquid-glass rounded-full px-4 py-1.5 text-sm font-medium text-white/90 font-body">WeChat</span>
-            <h2 class="mt-4 text-4xl italic leading-none text-white font-heading md:text-[2.75rem]">Scan to Connect</h2>
-            <p class="mt-3 max-w-[28rem] text-base font-light leading-snug text-white/72 font-body">
+            <span class="liquid-glass rounded-full px-4 py-1.5 text-sm font-medium text-white/90 font-body" data-i18n="wechat.label">WeChat</span>
+            <h2 class="mt-4 text-4xl italic leading-none text-white font-heading md:text-[2.75rem]" data-i18n="wechat.title">Scan to Connect</h2>
+            <p class="mt-3 max-w-[28rem] text-base font-light leading-snug text-white/72 font-body" data-i18n="wechat.body">
               Use WeChat to scan the QR code and add me as a contact.
             </p>
           </div>
@@ -163,9 +215,9 @@
       <a href="https://space.bilibili.com/22301865?spm_id_from=333.1007.0.0" target="_blank" rel="noopener noreferrer" class="liquid-glass interactive-card block rounded-[1.25rem] p-5 md:p-6">
         <div class="flex items-start justify-between gap-4">
           <div>
-            <span class="liquid-glass rounded-full px-4 py-1.5 text-sm font-medium text-white/90 font-body">Bilibili</span>
-            <h2 class="mt-4 text-4xl italic leading-none text-white font-heading md:text-[2.75rem]">Video Channel</h2>
-            <p class="mt-3 max-w-[30rem] text-base font-light leading-snug text-white/72 font-body">
+            <span class="liquid-glass rounded-full px-4 py-1.5 text-sm font-medium text-white/90 font-body" data-i18n="bilibili.label">Bilibili</span>
+            <h2 class="mt-4 text-4xl italic leading-none text-white font-heading md:text-[2.75rem]" data-i18n="bilibili.title">Video Channel</h2>
+            <p class="mt-3 max-w-[30rem] text-base font-light leading-snug text-white/72 font-body" data-i18n="bilibili.body">
               Visit my Bilibili homepage for videos, updates, and creative experiments.
             </p>
           </div>
@@ -181,9 +233,9 @@
       <a href="Files/resume.pdf" download="Resume.pdf" class="liquid-glass interactive-card block rounded-[1.25rem] p-5 md:p-6">
         <div class="flex items-start justify-between gap-4">
           <div>
-            <span class="liquid-glass rounded-full px-4 py-1.5 text-sm font-medium text-white/90 font-body">PDF</span>
-            <h2 class="mt-4 text-4xl italic leading-none text-white font-heading md:text-[2.75rem]">Resume</h2>
-            <p class="mt-3 max-w-[30rem] text-base font-light leading-snug text-white/72 font-body">
+            <span class="liquid-glass rounded-full px-4 py-1.5 text-sm font-medium text-white/90 font-body" data-i18n="resume.label">PDF</span>
+            <h2 class="mt-4 text-4xl italic leading-none text-white font-heading md:text-[2.75rem]" data-i18n="resume.title">Resume</h2>
+            <p class="mt-3 max-w-[30rem] text-base font-light leading-snug text-white/72 font-body" data-i18n="resume.body">
               Download a PDF version of my resume.
             </p>
           </div>
@@ -200,6 +252,127 @@
   </main>
   <script>
     (() => {
+      const copy = {
+        en: {
+          nav: {
+            home: "Home",
+            about: "About Me",
+            projects: "Projects",
+            resume: "Resume",
+            hobbies: "Hobbies",
+            contact: "Contact Me",
+            menu: "Menu",
+            close: "Close menu",
+            langLabel: "中文",
+          },
+          contact: {
+            eyebrow: "Contact",
+            title: "Contact Me",
+            intro: "Find me on social platforms, or scan the WeChat QR code for direct contact.",
+          },
+          wechat: {
+            label: "WeChat",
+            title: "Scan to Connect",
+            body: "Use WeChat to scan the QR code and add me as a contact.",
+          },
+          bilibili: {
+            label: "Bilibili",
+            title: "Video Channel",
+            body: "Visit my Bilibili homepage for videos, updates, and creative experiments.",
+          },
+          resume: {
+            label: "PDF",
+            title: "Resume",
+            body: "Download a PDF version of my resume.",
+          },
+        },
+        zh: {
+          nav: {
+            home: "首页",
+            about: "关于我",
+            projects: "项目",
+            resume: "简历",
+            hobbies: "兴趣",
+            contact: "联系我",
+            menu: "菜单",
+            close: "关闭菜单",
+            langLabel: "EN",
+          },
+          contact: {
+            eyebrow: "联系",
+            title: "联系我",
+            intro: "你可以通过社交平台找到我，也可以扫描微信二维码直接添加联系。",
+          },
+          wechat: {
+            label: "微信",
+            title: "扫码联系",
+            body: "使用微信扫描二维码，即可添加我为联系人。",
+          },
+          bilibili: {
+            label: "哔哩哔哩",
+            title: "视频主页",
+            body: "访问我的 Bilibili 主页，查看视频、动态和创意实验。",
+          },
+          resume: {
+            label: "PDF",
+            title: "简历",
+            body: "下载 PDF 版本的个人简历。",
+          },
+        },
+      };
+
+      const getValue = (source, path) => path.split(".").reduce((obj, key) => obj && obj[key], source);
+      let lang = window.localStorage.getItem("site-lang") === "zh" ? "zh" : "en";
+      const menuButton = document.getElementById("mobile-menu-toggle");
+      const menuPanel = document.getElementById("mobile-nav-panel");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+
+      const setMenuOpen = (open) => {
+        if (!menuButton || !menuPanel) return;
+        menuPanel.classList.toggle("hidden", !open);
+        menuButton.setAttribute("aria-expanded", String(open));
+        menuButton.setAttribute("aria-label", open ? copy[lang].nav.close : copy[lang].nav.menu);
+        menuIcon && menuIcon.classList.toggle("hidden", open);
+        closeIcon && closeIcon.classList.toggle("hidden", !open);
+      };
+
+      const applyLanguage = () => {
+        const current = copy[lang];
+        document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+        document.body.classList.toggle("lang-zh", lang === "zh");
+        document.title = current.contact.title;
+        document.querySelectorAll("[data-i18n]").forEach((node) => {
+          const value = getValue(current, node.dataset.i18n);
+          if (value) node.textContent = value;
+        });
+        document.querySelectorAll(".lang-toggle").forEach((node) => {
+          node.textContent = current.nav.langLabel;
+        });
+        setMenuOpen(false);
+      };
+
+      document.querySelectorAll(".lang-toggle").forEach((button) => {
+        button.addEventListener("click", () => {
+          lang = lang === "en" ? "zh" : "en";
+          window.localStorage.setItem("site-lang", lang);
+          applyLanguage();
+        });
+      });
+
+      if (menuButton) {
+        menuButton.addEventListener("click", () => {
+          const open = menuButton.getAttribute("aria-expanded") !== "true";
+          setMenuOpen(open);
+        });
+      }
+
+      document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+        link.addEventListener("click", () => setMenuOpen(false));
+      });
+
+      applyLanguage();
+
       const video = document.getElementById("contact-bg-video");
       const src = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260418_080021_d598092b-c4c2-4e53-8e46-94cf9064cd50.mp4";
       if (!video) return;
