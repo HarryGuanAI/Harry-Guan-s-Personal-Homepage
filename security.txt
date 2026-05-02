@@ -1,0 +1,4 @@
+Contact: mailto:security@your-domain.com
+Preferred-Languages: zh, en
+Canonical: https://your-domain.com/security.txt
+Expires: 2027-05-02T00:00:00Z

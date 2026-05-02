@@ -3,7 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cinematic Space Travel</title>
+  <title>个人网站 | AI 产品与 AI Agent 作品集</title>
+  <meta name="description" content="个人 AI 产品作品集，展示 AI Agent、LLM 应用开发、提示词工程、Vibe Coding 工作流和智能产品原型实践。" />
+  <meta name="keywords" content="AI 产品, AI Agent, LLM 应用开发, 提示词工程, Vibe Coding, 个人作品集" />
+  <meta name="author" content="AI Product Practitioner" />
+  <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://your-domain.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="个人 AI 产品作品集" />
+  <meta property="og:title" content="个人网站 | AI 产品与 AI Agent 作品集" />
+  <meta property="og:description" content="展示 AI Agent、LLM 应用开发、提示词工程和智能产品原型实践的个人网站。" />
+  <meta property="og:url" content="https://your-domain.com/" />
+  <meta property="og:image" content="https://your-domain.com/Images/hobbies/hobbies-background.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="个人网站 | AI 产品与 AI Agent 作品集" />
+  <meta name="twitter:description" content="展示 AI Agent、LLM 应用开发、提示词工程和智能产品原型实践的个人网站。" />
+  <meta name="twitter:image" content="https://your-domain.com/Images/hobbies/hobbies-background.png" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "url": "https://your-domain.com/",
+      "name": "个人 AI 产品作品集",
+      "inLanguage": ["zh-CN", "en"],
+      "mainEntity": {
+        "@type": "Person",
+        "name": "AI Product Practitioner",
+        "jobTitle": "AI Product Practitioner",
+        "description": "AI 产品与应用开发实践者，关注 AI Agent、LLM 应用开发、提示词工程和智能产品原型。",
+        "knowsAbout": [
+          "AI Agent",
+          "LLM application development",
+          "Prompt engineering",
+          "AI product design",
+          "Vibe Coding"
+        ],
+        "url": "https://your-domain.com/",
+        "sameAs": [
+          "https://space.bilibili.com/22301865"
+        ]
+      }
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -631,7 +674,7 @@
 
     function getInitialLang() {
       const saved = window.localStorage.getItem("site-lang");
-      return saved === "zh" || saved === "en" ? saved : "en";
+      return saved === "zh" || saved === "en" ? saved : "zh";
     }
 
     function Navbar({ lang, onToggleLang }) {

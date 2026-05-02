@@ -3,7 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Me</title>
+  <title>联系我 | 个人 AI 产品作品集</title>
+  <meta name="description" content="联系个人 AI 产品与应用开发实践者，获取微信二维码、Bilibili 主页和个人简历下载入口。" />
+  <meta name="keywords" content="联系我, AI 产品, AI Agent, LLM 应用开发, 简历, Bilibili" />
+  <meta name="author" content="AI Product Practitioner" />
+  <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://your-domain.com/contact.html" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="个人 AI 产品作品集" />
+  <meta property="og:title" content="联系我 | 个人 AI 产品作品集" />
+  <meta property="og:description" content="通过微信、Bilibili 或简历入口联系个人 AI 产品与应用开发实践者。" />
+  <meta property="og:url" content="https://your-domain.com/contact.html" />
+  <meta property="og:image" content="https://your-domain.com/Images/contact/wechat-qr.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="联系我 | 个人 AI 产品作品集" />
+  <meta name="twitter:description" content="通过微信、Bilibili 或简历入口联系个人 AI 产品与应用开发实践者。" />
+  <meta name="twitter:image" content="https://your-domain.com/Images/contact/wechat-qr.jpg" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "url": "https://your-domain.com/contact.html",
+      "name": "联系我",
+      "inLanguage": ["zh-CN", "en"],
+      "about": {
+        "@type": "Person",
+        "name": "AI Product Practitioner",
+        "jobTitle": "AI Product Practitioner",
+        "url": "https://your-domain.com/",
+        "sameAs": [
+          "https://space.bilibili.com/22301865"
+        ]
+      }
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -322,7 +357,8 @@
       };
 
       const getValue = (source, path) => path.split(".").reduce((obj, key) => obj && obj[key], source);
-      let lang = window.localStorage.getItem("site-lang") === "zh" ? "zh" : "en";
+      const savedLang = window.localStorage.getItem("site-lang");
+      let lang = savedLang === "en" || savedLang === "zh" ? savedLang : "zh";
       const menuButton = document.getElementById("mobile-menu-toggle");
       const menuPanel = document.getElementById("mobile-nav-panel");
       const menuIcon = document.getElementById("menu-icon");
