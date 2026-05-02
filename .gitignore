@@ -52,6 +52,7 @@ Images/**/*.jpeg
 Images/**/*.png
 Images/**/*-source.*
 Images/**/*.mp4
+Images/*-source.png
 !Images/**/*.webp
 
 # Unused local WebP exports kept only as source material

@@ -949,10 +949,15 @@
       const cards = c.cards.map((card, index) => ({ ...cardMeta[index], ...card }));
 
       return (
-        <section id="capabilities" className="relative min-h-screen overflow-hidden bg-black">
+        <section
+          id="capabilities"
+          className="relative min-h-screen overflow-hidden bg-black bg-cover bg-center"
+          style={{ backgroundImage: "url('Images/backgrounds-about.webp')" }}
+        >
           <FadingVideo
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260418_094631_d30ab262-45ee-4b7d-99f3-5d5848c8ef13.mp4"
             className="absolute inset-0 z-0 h-full w-full object-cover object-[center_46%]"
+            poster="Images/backgrounds-about.webp"
             seamlessLoop
           />
           <div className="relative z-10 flex min-h-screen flex-col px-8 pb-10 pt-40 md:px-16 md:pt-44 lg:px-20 lg:pt-44">
@@ -1051,10 +1056,15 @@
       };
 
       return (
-        <section id="projects" className="relative min-h-screen overflow-hidden bg-black px-8 py-28 md:px-16 lg:px-20">
+        <section
+          id="projects"
+          className="relative min-h-screen overflow-hidden bg-black bg-cover bg-center px-8 py-28 md:px-16 lg:px-20"
+          style={{ backgroundImage: "url('Images/backgrounds-projects.webp')" }}
+        >
           <FadingVideo
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            poster="Images/backgrounds-projects.webp"
             seamlessLoop
           />
           <div className="absolute inset-0 z-0 bg-black/32" />
