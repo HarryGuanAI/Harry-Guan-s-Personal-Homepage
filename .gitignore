@@ -44,6 +44,28 @@ _tmp_pip/
 **/pip-unpack-*/
 Generated/video/frames/
 Generated/video/*.mp4
+Generated/
+
+# Deployment keeps optimized WebP assets; ignore source media and temporary copies
+Images/**/*.jpg
+Images/**/*.jpeg
+Images/**/*.png
+Images/**/*-source.*
+Images/**/*.mp4
+!Images/**/*.webp
+
+# Unused local WebP exports kept only as source material
+Images/generate/ig_0ee375064cdd42460169f45035ac1081918eb15ae7fac72ea6.webp
+Images/generate/ig_0ee375064cdd42460169f4507058188191a9aaa0e2f15b9c27.webp
+Images/generate/ig_0ee375064cdd42460169f452a0f7408191be2da603663071c4.webp
+Images/generate/ig_0ee375064cdd42460169f452f7a0048191aa3003f9ec10ba49.webp
+Images/generate/个人IP3视图.webp
+Images/hobbies/reading.webp
+Images/hobbies/spirits.webp
+Images/product-screenshots/lumina.webp
+Images/product-screenshots/synapse.webp
+Images/reference/
+Images/self/
 
 # OS and editor files
 .DS_Store
