@@ -357,7 +357,7 @@
         Home: "#hero",
         "About Me": "#capabilities",
         Projects: "#projects",
-        Resume: "#capabilities",
+        Resume: "Files/resume.pdf",
         Hobbies: "#hobbies",
       };
       return (
@@ -368,11 +368,11 @@
             </a>
             <div className="liquid-glass hidden items-center rounded-full px-1.5 py-1.5 md:flex">
               {links.map((link) => (
-                <a key={link} href={targets[link]} className="px-3 py-2 text-sm font-medium text-white/90 font-body">
+                <a key={link} href={targets[link]} download={link === "Resume" ? "Resume.pdf" : undefined} className="px-3 py-2 text-sm font-medium text-white/90 font-body">
                   {link}
                 </a>
               ))}
-              <a href="#capabilities" className="ml-1 flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black font-body whitespace-nowrap">
+              <a href="contact.html" className="ml-1 flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black font-body whitespace-nowrap">
                 Contact Me <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
