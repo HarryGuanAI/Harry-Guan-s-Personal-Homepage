@@ -842,7 +842,11 @@
     function Hero({ lang }) {
       const c = copy[lang].hero;
       return (
-        <section id="hero" className="relative flex min-h-screen overflow-hidden bg-black">
+        <section
+          id="hero"
+          className="relative flex min-h-screen overflow-hidden bg-black bg-cover bg-center"
+          style={{ backgroundImage: "url('Images/generate/ig_011d9e7295af421f0169f464adddac81979d2fe03e38ab4d19.webp')" }}
+        >
           <FadingVideo
             src="https://stream.mux.com/O9KR2ldtszUeixlGSG01vh164FE7WxayyiOuKPGNKJMU.m3u8"
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
