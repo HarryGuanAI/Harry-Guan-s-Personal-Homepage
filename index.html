@@ -103,6 +103,33 @@
       will-change: opacity;
     }
 
+    .interactive-card {
+      transform-origin: center;
+      transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), filter 260ms ease, box-shadow 260ms ease;
+      will-change: transform;
+    }
+
+    .interactive-card:hover {
+      transform: translateY(-8px) scale(1.018) !important;
+      filter: brightness(1.06);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.22), inset 0 1px 1px rgba(255,255,255,0.14);
+    }
+
+    .interactive-card:active {
+      transform: translateY(-4px) scale(1.01) !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .interactive-card {
+        transition: none;
+      }
+
+      .interactive-card:hover,
+      .interactive-card:active {
+        transform: none !important;
+      }
+    }
+
     @media (max-width: 767px) {
       .hero-title {
         letter-spacing: -2px !important;
@@ -427,7 +454,7 @@
       return (
         <motion.article
           {...entrance}
-          className="liquid-glass flex min-h-[360px] flex-col rounded-[1.25rem] p-6"
+          className="liquid-glass interactive-card flex min-h-[360px] flex-col rounded-[1.25rem] p-6"
         >
           <div className="flex items-start justify-between gap-4">
             <div className="liquid-glass flex h-11 w-11 shrink-0 items-center justify-center rounded-[0.75rem]">
@@ -501,7 +528,7 @@
       return (
         <motion.article
           {...entrance}
-          className="liquid-glass relative flex min-h-[32rem] min-w-[20rem] flex-col rounded-[1.25rem] p-5 md:min-w-[25rem] lg:min-w-[28rem]"
+          className="liquid-glass interactive-card relative flex min-h-[32rem] min-w-[20rem] flex-col rounded-[1.25rem] p-5 md:min-w-[25rem] lg:min-w-[28rem]"
         >
           <div className="relative h-52 overflow-hidden rounded-[1rem] bg-black">
             <img src={project.cover} alt="" className="h-full w-full object-cover opacity-80" />
@@ -590,7 +617,14 @@
 
       return (
         <section id="projects" className="relative min-h-screen overflow-hidden bg-black px-8 py-28 md:px-16 lg:px-20">
-          <div className="mx-auto max-w-7xl">
+          <FadingVideo
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            seamlessLoop
+          />
+          <div className="absolute inset-0 z-0 bg-black/32" />
+          <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/65 via-transparent to-black/65" />
+          <div className="relative z-10 mx-auto max-w-7xl">
             <motion.div {...entrance} className="flex items-end justify-between gap-6">
               <div>
                 <h2 className="text-6xl italic leading-[0.9] tracking-[-3px] text-white font-heading md:text-7xl lg:text-[6rem]">Projects</h2>
@@ -625,7 +659,7 @@
         <motion.article
           {...entrance}
           layoutId={`hobby-card-${hobby.title}`}
-          className="liquid-glass overflow-hidden rounded-[1.25rem]"
+          className="liquid-glass interactive-card overflow-hidden rounded-[1.25rem]"
           transition={hobbyLayoutTransition}
         >
           <button onClick={onToggle} className="block w-full text-left" type="button" aria-label={`Open ${hobby.title}`}>
@@ -717,8 +751,15 @@
       ];
 
       return (
-        <section id="hobbies" className="relative min-h-screen bg-black px-8 py-28 md:px-16 lg:px-20">
-          <div className="mx-auto max-w-7xl">
+        <section id="hobbies" className="relative min-h-screen overflow-hidden bg-black px-8 py-28 md:px-16 lg:px-20">
+          <img
+            src="Images/hobbies/hobbies-background.png"
+            alt=""
+            className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 z-0 bg-black/36" />
+          <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/70 via-transparent to-black/70" />
+          <div className="relative z-10 mx-auto max-w-7xl">
             <motion.header {...entrance} className="mb-14">
               <h2 className="text-6xl italic leading-[0.9] tracking-[-3px] text-white font-heading md:text-7xl lg:text-[6rem]">Hobbies</h2>
               <p className="mt-6 max-w-[40rem] text-base font-light leading-snug text-white/72 font-body md:text-lg">
