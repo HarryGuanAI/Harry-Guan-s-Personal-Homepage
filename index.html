@@ -141,6 +141,34 @@
     }
     window.ArrowUpRight = ArrowUpRight;
 
+    function ChevronLeft({ className = "h-5 w-5" }) {
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      );
+    }
+    window.ChevronLeft = ChevronLeft;
+
+    function ChevronRight({ className = "h-5 w-5" }) {
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="m9 18 6-6-6-6" />
+        </svg>
+      );
+    }
+    window.ChevronRight = ChevronRight;
+
+    function PlusIcon({ className = "h-5 w-5" }) {
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M12 5v14" />
+          <path d="M5 12h14" />
+        </svg>
+      );
+    }
+    window.PlusIcon = PlusIcon;
+
     function PlayIcon({ className = "h-6 w-6" }) {
       return (
         <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -325,15 +353,22 @@
 
     function Navbar() {
       const links = ["Home", "About Me", "Projects", "Resume", "Hobbies"];
+      const targets = {
+        Home: "#hero",
+        "About Me": "#capabilities",
+        Projects: "#projects",
+        Resume: "#capabilities",
+        Hobbies: "#hobbies",
+      };
       return (
-        <nav className="fixed top-4 left-0 right-0 z-50 px-8 lg:px-16">
+        <nav className="fixed top-4 left-0 right-0 z-[9999] px-8 lg:px-16">
           <div className="mx-auto flex max-w-7xl items-center justify-between">
             <a href="#hero" className="liquid-glass flex h-12 w-12 items-center justify-center rounded-full text-3xl italic leading-none text-white font-heading" aria-label="Astro home">
               <span className="-translate-y-0.5">g</span>
             </a>
             <div className="liquid-glass hidden items-center rounded-full px-1.5 py-1.5 md:flex">
               {links.map((link) => (
-                <a key={link} href={link === "Home" ? "#hero" : "#capabilities"} className="px-3 py-2 text-sm font-medium text-white/90 font-body">
+                <a key={link} href={targets[link]} className="px-3 py-2 text-sm font-medium text-white/90 font-body">
                   {link}
                 </a>
               ))}
@@ -357,7 +392,6 @@
             seamlessLoop
           />
           <div className="relative z-10 flex min-h-screen w-full flex-col">
-            <Navbar />
             <div className="absolute left-1/2 bottom-[6vh] z-20 -translate-x-1/2">
               <motion.div {...entrance} transition={{ ...entrance.transition, delay: 1.0 }} className="liquid-glass flex items-center gap-3 rounded-full px-1.5 py-1.5 font-body">
                 <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-black">New</span>
@@ -463,11 +497,254 @@
     }
     window.Capabilities = Capabilities;
 
+    function ProjectCard({ project }) {
+      return (
+        <motion.article
+          {...entrance}
+          className="liquid-glass relative flex min-h-[32rem] min-w-[20rem] flex-col rounded-[1.25rem] p-5 md:min-w-[25rem] lg:min-w-[28rem]"
+        >
+          <div className="relative h-52 overflow-hidden rounded-[1rem] bg-black">
+            <img src={project.cover} alt="" className="h-full w-full object-cover opacity-80" />
+            <div className="absolute inset-0 bg-black/35" />
+            <div className="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-xs font-semibold text-black font-body">{project.status}</div>
+            <div className="absolute bottom-4 left-4 right-4">
+              <div className="liquid-glass rounded-[0.9rem] px-4 py-3">
+                <div className="text-xs uppercase tracking-[0.18em] text-white/60 font-body">{project.type}</div>
+                <div className="mt-1 text-2xl italic leading-none text-white font-heading">{project.name}</div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-1 flex-col pt-6">
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span key={tag} className="liquid-glass rounded-full px-3 py-1 text-xs font-medium text-white/90 font-body">{tag}</span>
+              ))}
+            </div>
+            <p className="mt-5 max-w-[34ch] text-base font-light leading-[1.35] text-white/85 font-body">{project.body}</p>
+            <div className="mt-auto flex items-end justify-between pt-8">
+              <div>
+                <div className="text-4xl italic leading-none text-white font-heading">{project.metric}</div>
+                <div className="mt-1 text-xs uppercase tracking-[0.18em] text-white/55 font-body">{project.metricLabel}</div>
+              </div>
+              <button className="liquid-glass flex h-11 w-11 items-center justify-center rounded-full text-white" type="button" aria-label={`Open ${project.name}`}>
+                <ArrowUpRight className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </motion.article>
+      );
+    }
+    window.ProjectCard = ProjectCard;
+
+    function Projects() {
+      const railRef = useRef(null);
+      const projects = [
+        {
+          name: "VibeCode Agent",
+          type: "Coding Tool",
+          status: "NEW",
+          cover: "Images/generate/ig_011d9e7295af421f0169f464adddac81979d2fe03e38ab4d19.png",
+          tags: ["AI Agent", "Code Review", "Workflow"],
+          body: "An agentic coding assistant concept for reading repositories, planning changes, editing UI copy, and verifying results through fast iteration.",
+          metric: "01",
+          metricLabel: "Prototype",
+        },
+        {
+          name: "PromptFlow Studio",
+          type: "Prompt System",
+          status: "BUILD",
+          cover: "Images/generate/ig_0ee375064cdd42460169f4507058188191a9aaa0e2f15b9c27.png",
+          tags: ["Prompt Design", "Evaluation", "Templates"],
+          body: "A workspace for turning rough product ideas into reusable prompt flows, test cases, and structured AI interaction patterns.",
+          metric: "12",
+          metricLabel: "Scenarios",
+        },
+        {
+          name: "AgentOps Console",
+          type: "AI Product",
+          status: "IDEA",
+          cover: "Images/generate/ig_0ee375064cdd42460169f452f7a0048191aa3003f9ec10ba49.png",
+          tags: ["Monitoring", "Task Runs", "Iteration"],
+          body: "A lightweight dashboard concept for tracking agent runs, failure reasons, product feedback, and next-step improvement loops.",
+          metric: "03",
+          metricLabel: "Modules",
+        },
+        {
+          name: "DocPilot AI",
+          type: "Productivity",
+          status: "DEMO",
+          cover: "Images/reference/495ad960755c7d1c5ed402af4bb543f0.jpg",
+          tags: ["Documents", "Research", "Summaries"],
+          body: "An AI document companion that turns notes, references, and requirements into clean briefs for product and development teams.",
+          metric: "AI",
+          metricLabel: "Assistant",
+        },
+      ];
+
+      const scrollRail = (direction) => {
+        if (!railRef.current) return;
+        railRef.current.scrollBy({ left: direction * 460, behavior: "smooth" });
+      };
+
+      return (
+        <section id="projects" className="relative min-h-screen overflow-hidden bg-black px-8 py-28 md:px-16 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <motion.div {...entrance} className="flex items-end justify-between gap-6">
+              <div>
+                <h2 className="text-6xl italic leading-[0.9] tracking-[-3px] text-white font-heading md:text-7xl lg:text-[6rem]">Projects</h2>
+                <p className="mt-6 max-w-[42rem] text-base font-light leading-snug text-white/72 font-body md:text-lg">
+                  AI Agent products, coding workflows, and practical product experiments built around usable intelligence.
+                </p>
+              </div>
+              <div className="hidden items-center gap-3 md:flex">
+                <button onClick={() => scrollRail(-1)} className="liquid-glass flex h-12 w-12 items-center justify-center rounded-full text-white" type="button" aria-label="Previous project">
+                  <ChevronLeft />
+                </button>
+                <button onClick={() => scrollRail(1)} className="liquid-glass flex h-12 w-12 items-center justify-center rounded-full text-white" type="button" aria-label="Next project">
+                  <ChevronRight />
+                </button>
+              </div>
+            </motion.div>
+            <div ref={railRef} className="mt-14 flex snap-x gap-6 overflow-x-auto scroll-smooth pb-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {projects.map((project) => (
+                <div key={project.name} className="snap-start">
+                  <ProjectCard project={project} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+    window.Projects = Projects;
+
+    function HobbyCard({ hobby, onToggle }) {
+      return (
+        <motion.article
+          {...entrance}
+          layoutId={`hobby-card-${hobby.title}`}
+          className="liquid-glass overflow-hidden rounded-[1.25rem]"
+        >
+          <button onClick={onToggle} className="block w-full text-left" type="button" aria-label={`Open ${hobby.title}`}>
+            <motion.div layoutId={`hobby-cover-${hobby.title}`} className="relative h-64 overflow-hidden bg-black">
+              <img src={hobby.cover} alt="" className="h-full w-full object-cover opacity-[0.88]" />
+              <div className="absolute inset-0 bg-black/25" />
+              <div className="absolute right-5 top-5 liquid-glass flex h-11 w-11 items-center justify-center rounded-full text-white">
+                <PlusIcon className="h-5 w-5" />
+              </div>
+            </motion.div>
+            <motion.div layoutId={`hobby-copy-${hobby.title}`} className="p-6">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-3xl italic leading-none text-white font-heading md:text-4xl">{hobby.title}</h3>
+                  <p className="mt-3 max-w-[34ch] text-base font-light leading-snug text-white/82 font-body">{hobby.summary}</p>
+                </div>
+                <span className="liquid-glass shrink-0 rounded-full px-3 py-1 text-xs font-medium text-white/90 font-body">{hobby.tag}</span>
+              </div>
+            </motion.div>
+          </button>
+        </motion.article>
+      );
+    }
+    window.HobbyCard = HobbyCard;
+
+    function HobbyOverlay({ hobby, onClose }) {
+      if (!hobby) return null;
+      return (
+        <motion.div
+          className="fixed inset-0 z-[9000] flex items-center justify-center bg-black/70 px-6 py-24 backdrop-blur-sm md:px-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+        >
+          <motion.article
+            layoutId={`hobby-card-${hobby.title}`}
+            className="liquid-glass max-h-[calc(100vh-8rem)] w-full max-w-5xl overflow-hidden rounded-[1.25rem]"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <motion.div layoutId={`hobby-cover-${hobby.title}`} className="relative h-[42vh] min-h-[20rem] overflow-hidden bg-black">
+              <img src={hobby.cover} alt="" className="h-full w-full object-cover opacity-[0.9]" />
+              <div className="absolute inset-0 bg-black/20" />
+              <button onClick={onClose} className="absolute right-5 top-5 liquid-glass flex h-12 w-12 items-center justify-center rounded-full text-white" type="button" aria-label="Close hobby detail">
+                <PlusIcon className="h-5 w-5 rotate-45" />
+              </button>
+            </motion.div>
+            <motion.div layoutId={`hobby-copy-${hobby.title}`} className="p-7 md:p-9">
+              <div className="flex items-start justify-between gap-5">
+                <div>
+                  <h3 className="text-4xl italic leading-none text-white font-heading md:text-6xl">{hobby.title}</h3>
+                  <p className="mt-4 max-w-[42rem] text-base font-light leading-snug text-white/82 font-body md:text-lg">{hobby.summary}</p>
+                </div>
+                <span className="liquid-glass shrink-0 rounded-full px-4 py-1.5 text-sm font-medium text-white/90 font-body">{hobby.tag}</span>
+              </div>
+              <p className="mt-6 max-w-[52rem] text-base font-light leading-relaxed text-white/72 font-body md:text-lg">{hobby.detail}</p>
+            </motion.div>
+          </motion.article>
+        </motion.div>
+      );
+    }
+    window.HobbyOverlay = HobbyOverlay;
+
+    function Hobbies() {
+      const [openIndex, setOpenIndex] = useState(null);
+      const hobbies = [
+        {
+          title: "Digital Creation",
+          tag: "Creative",
+          cover: "Images/generate/ig_0ee375064cdd42460169f452f7a0048191aa3003f9ec10ba49.png",
+          summary: "Exploring visual identity, character design, and AI-assisted image generation.",
+          detail: "I enjoy shaping abstract ideas into visual systems, testing different styles, and using AI tools to make personal concepts more expressive and memorable.",
+        },
+        {
+          title: "Music & Guitar",
+          tag: "Sound",
+          cover: "Images/generate/ig_011d9e7295af421f0169f464adddac81979d2fe03e38ab4d19.png",
+          summary: "A quiet habit for relaxing, listening, and staying sensitive to rhythm.",
+          detail: "Music helps me reset my attention. I like the craft of building atmosphere, whether that means listening deeply, practicing guitar, or noticing how sound changes the mood of a space.",
+        },
+        {
+          title: "Product Thinking",
+          tag: "Thinking",
+          cover: "Images/generate/ig_0ee375064cdd42460169f45035ac1081918eb15ae7fac72ea6.png",
+          summary: "Collecting small product ideas and turning them into interaction experiments.",
+          detail: "Outside formal work, I keep observing useful tools, interface details, and user behavior. Many hobby notes eventually become product sketches or AI workflow experiments.",
+        },
+      ];
+
+      return (
+        <section id="hobbies" className="relative min-h-screen bg-black px-8 py-28 md:px-16 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <motion.header {...entrance} className="mb-14">
+              <h2 className="text-6xl italic leading-[0.9] tracking-[-3px] text-white font-heading md:text-7xl lg:text-[6rem]">Hobbies</h2>
+              <p className="mt-6 max-w-[40rem] text-base font-light leading-snug text-white/72 font-body md:text-lg">
+                Personal interests that keep the product work more observant, playful, and human.
+              </p>
+            </motion.header>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              {hobbies.map((hobby, index) => (
+                <HobbyCard
+                  key={hobby.title}
+                  hobby={hobby}
+                  onToggle={() => setOpenIndex(index)}
+                />
+              ))}
+            </div>
+          </div>
+          <HobbyOverlay hobby={openIndex === null ? null : hobbies[openIndex]} onClose={() => setOpenIndex(null)} />
+        </section>
+      );
+    }
+    window.Hobbies = Hobbies;
+
     function App() {
       return (
         <main className="bg-black text-white">
+          <Navbar />
           <Hero />
           <Capabilities />
+          <Projects />
+          <Hobbies />
         </main>
       );
     }
