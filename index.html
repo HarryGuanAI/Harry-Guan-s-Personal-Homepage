@@ -122,7 +122,7 @@
 
   <script type="text/babel">
     const { useEffect, useRef, useState } = React;
-    const { motion } = window.Motion;
+    const { motion, AnimatePresence } = window.Motion;
 
     const originalConsoleError = console.error;
     console.error = (...args) => {
@@ -536,6 +536,8 @@
     }
     window.ProjectCard = ProjectCard;
 
+    const hobbyLayoutTransition = { type: "tween", duration: 0.46, ease: "easeInOut" };
+
     function Projects() {
       const railRef = useRef(null);
       const projects = [
@@ -624,16 +626,17 @@
           {...entrance}
           layoutId={`hobby-card-${hobby.title}`}
           className="liquid-glass overflow-hidden rounded-[1.25rem]"
+          transition={hobbyLayoutTransition}
         >
           <button onClick={onToggle} className="block w-full text-left" type="button" aria-label={`Open ${hobby.title}`}>
-            <motion.div layoutId={`hobby-cover-${hobby.title}`} className="relative h-64 overflow-hidden bg-black">
-              <img src={hobby.cover} alt="" className="h-full w-full object-cover opacity-[0.88]" />
+            <motion.div layoutId={`hobby-cover-${hobby.title}`} transition={hobbyLayoutTransition} className="relative h-64 overflow-hidden bg-black">
+              <motion.img layoutId={`hobby-image-${hobby.title}`} transition={hobbyLayoutTransition} src={hobby.cover} alt="" className="absolute -inset-px h-[calc(100%+2px)] w-[calc(100%+2px)] object-cover opacity-[0.9]" />
               <div className="absolute inset-0 bg-black/25" />
               <div className="absolute right-5 top-5 liquid-glass flex h-11 w-11 items-center justify-center rounded-full text-white">
                 <PlusIcon className="h-5 w-5" />
               </div>
             </motion.div>
-            <motion.div layoutId={`hobby-copy-${hobby.title}`} className="p-6">
+            <motion.div layoutId={`hobby-copy-${hobby.title}`} transition={hobbyLayoutTransition} className="p-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <h3 className="text-3xl italic leading-none text-white font-heading md:text-4xl">{hobby.title}</h3>
@@ -655,22 +658,23 @@
           className="fixed inset-0 z-[9000] flex items-center justify-center bg-black/70 px-6 py-24 backdrop-blur-sm md:px-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ opacity: 0, transition: { duration: 0.28, ease: "easeOut" } }}
           onClick={onClose}
         >
           <motion.article
             layoutId={`hobby-card-${hobby.title}`}
             className="liquid-glass max-h-[calc(100vh-8rem)] w-full max-w-5xl overflow-hidden rounded-[1.25rem]"
             onClick={(event) => event.stopPropagation()}
+            transition={hobbyLayoutTransition}
           >
-            <motion.div layoutId={`hobby-cover-${hobby.title}`} className="relative h-[42vh] min-h-[20rem] overflow-hidden bg-black">
-              <img src={hobby.cover} alt="" className="h-full w-full object-cover opacity-[0.9]" />
+            <motion.div layoutId={`hobby-cover-${hobby.title}`} transition={hobbyLayoutTransition} className="relative h-[42vh] min-h-[20rem] overflow-hidden bg-black">
+              <motion.img layoutId={`hobby-image-${hobby.title}`} transition={hobbyLayoutTransition} src={hobby.cover} alt="" className="absolute -inset-px h-[calc(100%+2px)] w-[calc(100%+2px)] object-cover opacity-[0.92]" />
               <div className="absolute inset-0 bg-black/20" />
               <button onClick={onClose} className="absolute right-5 top-5 liquid-glass flex h-12 w-12 items-center justify-center rounded-full text-white" type="button" aria-label="Close hobby detail">
                 <PlusIcon className="h-5 w-5 rotate-45" />
               </button>
             </motion.div>
-            <motion.div layoutId={`hobby-copy-${hobby.title}`} className="p-7 md:p-9">
+            <motion.div layoutId={`hobby-copy-${hobby.title}`} transition={hobbyLayoutTransition} className="p-7 md:p-9">
               <div className="flex items-start justify-between gap-5">
                 <div>
                   <h3 className="text-4xl italic leading-none text-white font-heading md:text-6xl">{hobby.title}</h3>
@@ -731,7 +735,11 @@
               ))}
             </div>
           </div>
-          <HobbyOverlay hobby={openIndex === null ? null : hobbies[openIndex]} onClose={() => setOpenIndex(null)} />
+          <AnimatePresence>
+            {openIndex !== null && (
+              <HobbyOverlay hobby={hobbies[openIndex]} onClose={() => setOpenIndex(null)} />
+            )}
+          </AnimatePresence>
         </section>
       );
     }
