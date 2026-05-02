@@ -15,11 +15,11 @@
   <meta property="og:title" content="个人网站 | AI 产品与 AI Agent 作品集" />
   <meta property="og:description" content="展示 AI Agent、LLM 应用开发、提示词工程和智能产品原型实践的个人网站。" />
   <meta property="og:url" content="https://your-domain.com/" />
-  <meta property="og:image" content="https://your-domain.com/Images/hobbies/hobbies-background.png" />
+  <meta property="og:image" content="https://your-domain.com/Images/hobbies/hobbies-background.webp" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="个人网站 | AI 产品与 AI Agent 作品集" />
   <meta name="twitter:description" content="展示 AI Agent、LLM 应用开发、提示词工程和智能产品原型实践的个人网站。" />
-  <meta name="twitter:image" content="https://your-domain.com/Images/hobbies/hobbies-background.png" />
+  <meta name="twitter:image" content="https://your-domain.com/Images/hobbies/hobbies-background.webp" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <script type="application/ld+json">
     {
@@ -313,7 +313,7 @@
     }
     window.MaterialIcon = MaterialIcon;
 
-    function FadingVideo({ src, className, style, seamlessLoop = false }) {
+    function FadingVideo({ src, className, style, seamlessLoop = false, poster }) {
       const videoRef = useRef(null);
       const rafRef = useRef(null);
       const fadingOutRef = useRef(false);
@@ -392,16 +392,30 @@
       }, [src]);
 
       return (
-        <video
-          ref={videoRef}
-          className={`video-surface ${className}`}
-          style={style}
-          autoPlay
-          muted
-          loop={seamlessLoop}
-          playsInline
-          preload="auto"
-        />
+        <>
+          {poster && (
+            <img
+              src={poster}
+              alt=""
+              aria-hidden="true"
+              className={className}
+              style={style}
+              loading="eager"
+              decoding="async"
+            />
+          )}
+          <video
+            ref={videoRef}
+            className={`video-surface ${className}`}
+            style={style}
+            autoPlay
+            muted
+            loop={seamlessLoop}
+            playsInline
+            preload="auto"
+            poster={poster}
+          />
+        </>
       );
     }
     window.FadingVideo = FadingVideo;
@@ -571,27 +585,27 @@
         },
         hobbies: {
           title: "Hobbies",
-          intro: "Personal interests that keep the product work more observant, playful, and human.",
+          intro: "Quiet rituals and wandering impulses that keep attention grounded, curious, and alive.",
           close: "Close hobby detail",
           open: "Open",
           cards: [
             {
-              title: "Digital Creation",
-              tag: "Creative",
-              summary: "Exploring visual identity, character design, and AI-assisted image generation.",
-              detail: "I enjoy shaping abstract ideas into visual systems, testing different styles, and using AI tools to make personal concepts more expressive and memorable.",
+              title: "Reading",
+              tag: "Stillness",
+              summary: "Books let us borrow other lives, other wisdom, and a quieter kind of certainty.",
+              detail: "Reading gives me access to experiences I could never live alone. It gathers other people's judgment, patience, mistakes, and insight into something steady enough to hold.",
             },
             {
-              title: "Music & Guitar",
-              tag: "Sound",
-              summary: "A quiet habit for relaxing, listening, and staying sensitive to rhythm.",
-              detail: "Music helps me reset my attention. I like the craft of building atmosphere, whether that means listening deeply, practicing guitar, or noticing how sound changes the mood of a space.",
+              title: "Travel",
+              tag: "Distance",
+              summary: "The mountains and rivers beneath your feet are things that never lie.",
+              detail: "Travel resets my sense of scale. Roads, weather, mountains, and rivers have a directness that clears the noise and returns thought to something honest.",
             },
             {
-              title: "Product Thinking",
-              tag: "Thinking",
-              summary: "Collecting small product ideas and turning them into interaction experiments.",
-              detail: "Outside formal work, I keep observing useful tools, interface details, and user behavior. Many hobby notes eventually become product sketches or AI workflow experiments.",
+              title: "Alcohol & Tea",
+              tag: "Contrast",
+              summary: "Two opposite kinds of inspiration.",
+              detail: "Alcohol and tea pull the mind in different directions: one loosens the edges, the other clears the center. I like the strange balance between heat and stillness.",
             },
           ],
         },
@@ -711,27 +725,27 @@
         },
         hobbies: {
           title: "兴趣",
-          intro: "这些个人兴趣让我在产品工作中保持观察力、创造力和对真实体验的敏感度。",
+          intro: "一些让我保持安定、好奇和感知力的日常切面。",
           close: "关闭兴趣详情",
           open: "打开",
           cards: [
             {
-              title: "数字创作",
-              tag: "创意",
-              summary: "探索视觉身份、角色设计和 AI 辅助图像生成。",
-              detail: "我喜欢把抽象想法整理成可感知的视觉系统，尝试不同风格，并用 AI 工具让个人概念更有表现力和记忆点。",
+              title: "阅读",
+              tag: "安定",
+              summary: "书籍可以使人获得他人的人生经历和智慧，让人安定。",
+              detail: "阅读让我进入那些自己无法亲历的人生。别人的判断、耐心、错误和洞见，会在纸页里沉淀成一种可以反复取用的平静。",
             },
             {
-              title: "音乐与吉他",
-              tag: "声音",
-              summary: "一种让自己放松、倾听并保持节奏感的安静习惯。",
-              detail: "音乐能帮我重新整理注意力。我享受营造氛围的过程，无论是认真听歌、练习吉他，还是观察声音如何改变一个空间的情绪。",
+              title: "旅行",
+              tag: "远方",
+              summary: "踩在脚下的山和河流是永远不会骗人的存在。",
+              detail: "旅行会重新校准我对世界的尺度感。道路、天气、山与河流都有一种直接的诚实，能把思绪从噪音里带回真实的地方。",
             },
             {
-              title: "产品思考",
-              tag: "思考",
-              summary: "记录小型产品想法，并把它们变成可交互的实验。",
-              detail: "在正式工作之外，我也会持续观察有用的工具、界面细节和用户行为。很多兴趣笔记最终都会变成产品草图或 AI 工作流实验。",
+              title: "酒精 & 茶",
+              tag: "对照",
+              summary: "这是两种相反的灵感。",
+              detail: "酒精和茶把思绪带向两个方向：一个松开边界，一个澄清中心。我喜欢这种热烈与安静之间的奇妙平衡。",
             },
           ],
         },
@@ -832,6 +846,7 @@
           <FadingVideo
             src="https://stream.mux.com/O9KR2ldtszUeixlGSG01vh164FE7WxayyiOuKPGNKJMU.m3u8"
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
+            poster="Images/generate/ig_011d9e7295af421f0169f464adddac81979d2fe03e38ab4d19.webp"
             seamlessLoop
           />
           <div className="relative z-10 flex min-h-screen w-full flex-col">
@@ -1008,19 +1023,19 @@
       const c = copy[lang].projects;
       const projectMeta = [
         {
-          cover: "Images/generate/ig_011d9e7295af421f0169f464adddac81979d2fe03e38ab4d19.png",
+          cover: "Images/product-screenshots/第一个项目.webp",
           metric: "01",
         },
         {
-          cover: "Images/generate/ig_0ee375064cdd42460169f4507058188191a9aaa0e2f15b9c27.png",
+          cover: "Images/product-screenshots/第2个项目.webp",
           metric: "12",
         },
         {
-          cover: "Images/generate/ig_0ee375064cdd42460169f452f7a0048191aa3003f9ec10ba49.png",
+          cover: "Images/product-screenshots/aura.webp",
           metric: "03",
         },
         {
-          cover: "Images/reference/495ad960755c7d1c5ed402af4bb543f0.jpg",
+          cover: "Images/product-screenshots/vanguard.webp",
           metric: "AI",
         },
       ];
@@ -1057,9 +1072,9 @@
                 </button>
               </div>
             </motion.div>
-            <div ref={railRef} className="mt-10 flex snap-x items-stretch gap-6 overflow-x-auto scroll-smooth py-4 pb-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div ref={railRef} className="-mx-4 mt-10 flex snap-x items-stretch gap-6 overflow-x-auto scroll-smooth px-4 py-4 pb-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {projects.map((project) => (
-                <div key={project.name} className="flex snap-start">
+                <div key={project.name} className="flex snap-start px-1">
                   <ProjectCard project={project} openLabel={c.open} />
                 </div>
               ))}
@@ -1145,13 +1160,13 @@
       const c = copy[lang].hobbies;
       const hobbyMeta = [
         {
-          cover: "Images/generate/ig_0ee375064cdd42460169f452f7a0048191aa3003f9ec10ba49.png",
+          cover: "Images/hobbies/reading-portrait.webp",
         },
         {
-          cover: "Images/generate/ig_011d9e7295af421f0169f464adddac81979d2fe03e38ab4d19.png",
+          cover: "Images/hobbies/travel.webp",
         },
         {
-          cover: "Images/generate/ig_0ee375064cdd42460169f45035ac1081918eb15ae7fac72ea6.png",
+          cover: "Images/hobbies/alcohol-tea.webp",
         },
       ];
       const hobbies = c.cards.map((hobby, index) => ({ ...hobbyMeta[index], ...hobby }));
@@ -1159,7 +1174,7 @@
       return (
         <section id="hobbies" className="relative min-h-screen overflow-hidden bg-black px-8 py-28 md:px-16 lg:px-20">
           <img
-            src="Images/hobbies/hobbies-background.png"
+            src="Images/hobbies/hobbies-background.webp"
             alt=""
             className="absolute inset-0 z-0 h-full w-full object-cover object-center"
           />
