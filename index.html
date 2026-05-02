@@ -324,7 +324,7 @@
     };
 
     function Navbar() {
-      const links = ["Home", "About", "Projects", "Resume", "WeChat"];
+      const links = ["Home", "About Me", "Projects", "Resume", "Hobbies"];
       return (
         <nav className="fixed top-4 left-0 right-0 z-50 px-8 lg:px-16">
           <div className="mx-auto flex max-w-7xl items-center justify-between">
@@ -338,7 +338,7 @@
                 </a>
               ))}
               <a href="#capabilities" className="ml-1 flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black font-body whitespace-nowrap">
-                Claim a Spot <ArrowUpRight className="h-4 w-4" />
+                Contact Me <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
             <div className="h-12 w-12" aria-hidden="true" />
@@ -361,7 +361,7 @@
             <div className="absolute left-1/2 bottom-[6vh] z-20 -translate-x-1/2">
               <motion.div {...entrance} transition={{ ...entrance.transition, delay: 1.0 }} className="liquid-glass flex items-center gap-3 rounded-full px-1.5 py-1.5 font-body">
                 <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-black">New</span>
-                <span className="pr-3 text-sm text-white/90 whitespace-nowrap">Maiden Crewed Voyage to Mars Arrives 2026</span>
+                <span className="pr-3 text-sm text-white/90 whitespace-nowrap">Vibe Code development completed & published</span>
               </motion.div>
             </div>
             <div className="flex flex-1 items-start justify-start px-8 pt-40 text-left md:px-16 lg:px-20 lg:pt-48">
@@ -399,9 +399,9 @@
             <div className="liquid-glass flex h-11 w-11 shrink-0 items-center justify-center rounded-[0.75rem]">
               <MaterialIcon path={iconPath} />
             </div>
-            <div className="flex max-w-[70%] flex-wrap justify-end gap-1.5">
+            <div className="flex max-w-[76%] flex-wrap justify-end gap-2">
               {tags.map((tag) => (
-                <span key={tag} className="liquid-glass rounded-full px-3 py-1 text-[11px] text-white/90 font-body whitespace-nowrap">
+                <span key={tag} className="liquid-glass rounded-full px-4 py-1.5 text-xs font-medium text-white/95 font-body whitespace-nowrap md:text-sm">
                   {tag}
                 </span>
               ))}
@@ -410,7 +410,7 @@
           <div className="flex-1" />
           <div className="mt-6">
             <h3 className="text-3xl italic leading-none tracking-[-1px] text-white font-heading md:text-4xl">{title}</h3>
-            <p className="mt-3 max-w-[32ch] text-sm font-light leading-snug text-white/90 font-body">{body}</p>
+            <p className="mt-4 max-w-[34ch] text-base font-light leading-[1.35] text-white/90 font-body md:text-[17px]">{body}</p>
           </div>
         </motion.article>
       );
@@ -420,22 +420,22 @@
     function Capabilities() {
       const cards = [
         {
-          title: "AI Scenery",
-          iconPath: "M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21H5Zm1-4h12l-3.75-5-3 4L9 13l-3 4Z",
-          tags: ["Natural Context", "Photo Realism", "Infinite Settings", "Eco-Vibe"],
-          body: "AI analyzes your product to create indistinguishable natural environments — from Icelandic cliffs to misty forests.",
+          title: "Who I Am",
+          iconPath: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4Zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4Z",
+          tags: ["Profile", "Intro"],
+          body: "I am an AI product practitioner focusing on AI application and AI Agent development. I am passionate about turning advanced AI technology into practical, user-friendly products for real business needs.",
         },
         {
-          title: "Batch Production",
-          iconPath: "M4 6.47 5.76 10H20v8H4V6.47M22 4h-4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.89-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4Z",
-          tags: ["Scale Fast", "Visual Consistency", "Time Saver", "Ready to Post"],
-          body: "Style your entire product line in minutes. Create a unified visual identity for catalogues and social media without weeks of retouching.",
+          title: "Tech Stack",
+          iconPath: "M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3l4.1 4.1-3 3-4.2-4.1C.5 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4Z",
+          tags: ["Skills", "Tech"],
+          body: "Solid background in web structure, frontend interaction and AI tool ecosystem. Familiar with product prototype design, requirement analysis and AI function iteration for intelligent products.",
         },
         {
-          title: "Smart Lighting",
+          title: "Core Focus",
           iconPath: "M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1Zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7Z",
-          tags: ["Ray Tracing", "Physical Shadows", "Studio Quality", "Sunlight Sync"],
-          body: "Automatic lighting and material adjustment. Achieve flawless integration with realistic shadows and sunlight.",
+          tags: ["Professional Focus"],
+          body: "Mainly engaged in AI product design, AI Agent logic construction and intelligent application landing. Dedicate to exploring innovative AI solutions and building high-quality AI interactive products.",
         },
       ];
 
@@ -443,13 +443,12 @@
         <section id="capabilities" className="relative min-h-screen overflow-hidden bg-black">
           <FadingVideo
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260418_094631_d30ab262-45ee-4b7d-99f3-5d5848c8ef13.mp4"
-            className="absolute inset-0 z-0 h-full w-full object-cover"
+            className="absolute inset-0 z-0 h-full w-full object-cover object-[center_46%]"
           />
-          <div className="relative z-10 flex min-h-screen flex-col px-8 pb-10 pt-24 md:px-16 lg:px-20">
+          <div className="relative z-10 flex min-h-screen flex-col px-8 pb-10 pt-32 md:px-16 lg:px-20 lg:pt-36">
             <motion.header {...entrance} className="mb-auto">
-              <div className="mb-6 text-sm text-white/80 font-body">// Capabilities</div>
-              <h2 className="text-6xl italic leading-[0.9] tracking-[-3px] text-white font-heading md:text-7xl lg:text-[6rem]">
-                Production<br />evolved
+              <h2 className="max-w-[34rem] text-6xl italic leading-[0.9] tracking-[-3px] text-white font-heading md:text-7xl lg:text-[6rem]">
+                About Me
               </h2>
             </motion.header>
             <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
