@@ -1,4 +1,4 @@
-Contact: mailto:security@your-domain.com
+Contact: mailto:security@harryguan.online
 Preferred-Languages: zh, en
-Canonical: https://your-domain.com/security.txt
+Canonical: https://harryguan.online/security.txt
 Expires: 2027-05-02T00:00:00Z
