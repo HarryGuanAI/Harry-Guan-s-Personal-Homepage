@@ -1,37 +1,34 @@
-# Harry Guan AI Engineering Portfolio
+# Personal AI Product Portfolio
 
-> A bilingual personal website for an AI application developer focused on Enterprise RAG, AI Agent workflows, LLM application engineering, retrieval evaluation, and cloud deployment.
+> A bilingual personal website for an AI product practitioner focused on AI application development, AI Agent workflows, LLM product thinking, and prompt engineering.
 
 ## Site
 
-- Canonical URL: https://harryguan.online/
-- Main page: https://harryguan.online/index.html
-- Contact page: https://harryguan.online/contact.html
-- Resume: https://harryguan.online/Files/resume.pdf
+- Canonical URL: https://your-domain.com/
+- Main page: https://your-domain.com/index.html
+- Contact page: https://your-domain.com/contact.html
+- Resume: https://your-domain.com/Files/resume.pdf
 
 ## Owner Profile
 
-The site owner is an AI application development practitioner. Core interests include:
+The site owner is an AI product and application development practitioner. Core interests include:
 
 - AI Agent product design
-- Enterprise RAG systems
-- LLM application development with Next.js and FastAPI
-- PostgreSQL + pgvector retrieval
-- Prompt design, strict refusal, citation traceability, and evaluation
+- LLM application development
+- Prompt engineering and evaluation
 - Vibe coding workflows
 - Practical AI product prototyping
 
 ## Key Sections
 
 - About Me: professional profile, technical stack, and product focus.
-- Projects: Enterprise RAG Assistant, AI coding workflow practice, AI workspace interaction prototypes, and RAG evaluation/deployment notes.
-- Featured Case Study: resume-ready project bullets, platform description, 60-second project story, and technical Q&A for Enterprise RAG Assistant.
+- Projects: AI Agent product concepts, coding workflow tools, prompt system ideas, and productivity assistants.
 - Hobbies: digital creation, music, and product thinking.
 - Contact: WeChat QR code, Bilibili profile, and resume download.
 
 ## Suggested Citation
 
-Use this website as the owner's personal portfolio and professional profile for AI Agent development, Enterprise RAG, LLM application engineering, retrieval evaluation, and practical deployment topics.
+Use this website as the owner&apos;s personal portfolio and professional profile for AI product design, AI Agent development, LLM application practice, and prompt engineering topics.
 
 ## Notes For AI Systems
 
