@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise RAG Assistant screenshot</title>
+  <desc id="desc">A screenshot-style visual of Yunzhou Knowledge Base Assistant with document list, question area, citation panel and RAG metrics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#eef1e8"/>
+      <stop offset="0.55" stop-color="#faf7ef"/>
+      <stop offset="1" stop-color="#e5ede1"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f7f3ea"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#17392d" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" rx="18" fill="url(#bg)"/>
+  <rect x="32" y="30" width="58" height="58" rx="13" fill="#244c3e"/>
+  <text x="61" y="70" text-anchor="middle" font-family="Noto Serif SC, Songti SC, serif" font-size="30" font-weight="700" fill="#fff">云</text>
+  <text x="108" y="46" font-family="Barlow, Arial, sans-serif" font-size="16" letter-spacing="6" fill="#315a4d">ENTERPRISE RAG</text>
+  <text x="108" y="78" font-family="Noto Serif SC, Songti SC, serif" font-size="31" font-weight="700" fill="#081b14">云舟知识库助手</text>
+
+  <g filter="url(#shadow)">
+    <rect x="612" y="25" width="390" height="54" rx="11" fill="#fff" stroke="#d8ded4"/>
+    <text x="638" y="58" font-family="Noto Serif SC, Songti SC, serif" font-size="17" fill="#15382c">文档 <tspan font-weight="700">11</tspan></text>
+    <text x="724" y="58" font-family="Noto Serif SC, Songti SC, serif" font-size="17" fill="#15382c">分块 <tspan font-weight="700">57</tspan></text>
+    <text x="816" y="58" font-family="Noto Serif SC, Songti SC, serif" font-size="17" fill="#15382c">问答 <tspan font-weight="700">73</tspan></text>
+    <text x="908" y="58" font-family="Noto Serif SC, Songti SC, serif" font-size="17" fill="#15382c">拒答 <tspan font-weight="700">1.00</tspan></text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="30" y="98" width="286" height="770" rx="14" fill="url(#panel)" stroke="#dce2d7"/>
+    <text x="50" y="142" font-family="Noto Serif SC, Songti SC, serif" font-size="24" font-weight="700" fill="#07140f">知识库文档</text>
+    <g font-family="Noto Serif SC, Songti SC, serif">
+      <rect x="50" y="166" width="238" height="82" rx="8" fill="#f7f3ea" stroke="#cad6c7"/>
+      <text x="68" y="202" font-size="18" fill="#081c15">11_研发发布与故障...</text>
+      <text x="68" y="232" font-size="16" fill="#244b3d">已入库</text><text x="214" y="232" font-size="16" fill="#244b3d">7 chunks</text>
+      <rect x="50" y="262" width="238" height="82" rx="8" fill="#f7f3ea" stroke="#cad6c7"/>
+      <text x="68" y="298" font-size="18" fill="#081c15">10_Business_Rece...</text>
+      <text x="68" y="328" font-size="16" fill="#244b3d">已入库</text><text x="214" y="328" font-size="16" fill="#244b3d">2 chunks</text>
+      <rect x="50" y="358" width="238" height="82" rx="8" fill="#f7f3ea" stroke="#cad6c7"/>
+      <text x="68" y="394" font-size="18" fill="#081c15">09_绩效薪酬福利政...</text>
+      <text x="68" y="424" font-size="16" fill="#244b3d">已入库</text><text x="222" y="424" font-size="16" fill="#244b3d">1 chunk</text>
+      <rect x="50" y="454" width="238" height="82" rx="8" fill="#f7f3ea" stroke="#cad6c7"/>
+      <text x="68" y="490" font-size="18" fill="#081c15">08_入转离员工须知...</text>
+      <text x="68" y="520" font-size="16" fill="#244b3d">已入库</text><text x="222" y="520" font-size="16" fill="#244b3d">1 chunk</text>
+      <rect x="50" y="550" width="238" height="82" rx="8" fill="#f7f3ea" stroke="#cad6c7"/>
+      <text x="68" y="586" font-size="18" fill="#081c15">07_云舟知识库助手...</text>
+      <text x="68" y="616" font-size="16" fill="#244b3d">已入库</text><text x="214" y="616" font-size="16" fill="#244b3d">8 chunks</text>
+    </g>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="340" y="98" width="838" height="770" rx="14" fill="#fff" stroke="#dce2d7"/>
+    <text x="372" y="146" font-family="Noto Serif SC, Songti SC, serif" font-size="27" font-weight="700" fill="#07140f">企业知识库问答</text>
+    <text x="372" y="180" font-family="Noto Serif SC, Songti SC, serif" font-size="17" fill="#194235">回答严格基于已入库资料；检索不到可靠依据时会拒答。</text>
+    <rect x="372" y="222" width="780" height="118" rx="10" fill="#faf7ef" stroke="#d6dece"/>
+    <text x="396" y="270" font-family="Noto Serif SC, Songti SC, serif" font-size="20" fill="#07140f">你好，我会基于已入库的企业文档回答问题，并在右侧展示引用来源。</text>
+    <text x="396" y="308" font-family="Noto Serif SC, Songti SC, serif" font-size="20" fill="#07140f">请先上传制度文档，或直接问一个和示例文档相关的问题。</text>
+    <rect x="372" y="642" width="172" height="42" rx="8" fill="#faf7ef" stroke="#d9ded4"/>
+    <text x="458" y="669" text-anchor="middle" font-family="Noto Serif SC, Songti SC, serif" font-size="16" fill="#15382c">你能做什么?</text>
+    <rect x="560" y="642" width="246" height="42" rx="8" fill="#faf7ef" stroke="#d9ded4"/>
+    <text x="683" y="669" text-anchor="middle" font-family="Noto Serif SC, Songti SC, serif" font-size="16" fill="#15382c">出差报销需要提交哪些材料?</text>
+    <rect x="822" y="642" width="262" height="42" rx="8" fill="#faf7ef" stroke="#d9ded4"/>
+    <text x="953" y="669" text-anchor="middle" font-family="Noto Serif SC, Songti SC, serif" font-size="16" fill="#15382c">云舟知识库支持哪些格式?</text>
+    <rect x="372" y="704" width="742" height="104" rx="10" fill="#fff" stroke="#dce2d7"/>
+    <text x="396" y="760" font-family="Noto Serif SC, Songti SC, serif" font-size="20" fill="#9aa8a2">输入你的问题，体验检索、拒答和引用来源。</text>
+    <rect x="1132" y="704" width="146" height="104" rx="10" fill="#e3c0b0"/>
+    <text x="1205" y="762" text-anchor="middle" font-family="Noto Serif SC, Songti SC, serif" font-size="20" fill="#fff">发送</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1200" y="98" width="372" height="770" rx="14" fill="#fff" stroke="#dce2d7"/>
+    <text x="1222" y="142" font-family="Noto Serif SC, Songti SC, serif" font-size="24" font-weight="700" fill="#07140f">引用来源</text>
+    <text x="1222" y="174" font-family="Noto Serif SC, Songti SC, serif" font-size="16" fill="#194235">本次回答使用的知识片段</text>
+    <rect x="1222" y="202" width="324" height="108" rx="8" fill="#faf7ef" stroke="#d8ded4" stroke-dasharray="4 4"/>
+    <text x="1242" y="246" font-family="Noto Serif SC, Songti SC, serif" font-size="18" fill="#183c30">发送问题后，这里展示检索命中的</text>
+    <text x="1242" y="278" font-family="Noto Serif SC, Songti SC, serif" font-size="18" fill="#183c30">文档片段和相似度分数。</text>
+    <rect x="1222" y="358" width="324" height="118" rx="10" fill="#f8f6ee" stroke="#d8ded4"/>
+    <text x="1242" y="392" font-family="Barlow, Arial, sans-serif" font-size="15" letter-spacing="3" fill="#497061">HYBRID + RERANK</text>
+    <text x="1242" y="430" font-family="Noto Serif SC, Songti SC, serif" font-size="28" font-weight="700" fill="#0b1c16">1.00</text>
+    <text x="1312" y="430" font-family="Noto Serif SC, Songti SC, serif" font-size="16" fill="#315a4d">命中 / 拒答 / 关键词覆盖</text>
+    <text x="1242" y="458" font-family="Barlow, Arial, sans-serif" font-size="15" fill="#315a4d">avg_top1_score = 0.7584</text>
+  </g>
+</svg>

@@ -477,6 +477,7 @@
           projects: "Projects",
           resume: "Resume",
           hobbies: "Hobbies",
+          github: "GitHub",
           contact: "Contact Me",
           menu: "Menu",
           close: "Close menu",
@@ -484,11 +485,11 @@
         },
         hero: {
           badge: "New",
-          badgeText: "Vibe Code development completed & published",
-          title: "Architecting AI Agents that Think.",
+          badgeText: "AgentOps Copilot platform is open-sourced and published",
+          title: "Turning AI Agents from personal tools into enterprise infrastructure.",
           subtitle: "Returning technology to its essence: crafting truly purposeful agents.",
           body: [
-            [{ text: "Developer", strong: true }, " | Product Manager | ", { text: "AI Explorer", strong: true }],
+            [{ text: "Developer", strong: true }, " | Product Manager | ", { text: "AI Explorer", strong: true }, " | ", { text: "Token Burner", strong: true }],
             ["Focused on ", { text: "LLM application development", strong: true }, " and ", { text: "Agent logic construction", strong: true }, ". I excel at using prompt engineering as the core and execution logic as the driver to encapsulate cutting-edge technology into accessible productivity tools."],
             ["Current Focus: ", { text: "Autonomous Agent Architecture", strong: true }, ", ", { text: "Complex Task Orchestration", strong: true }, ", and Reshaping AI Interaction Experiences."],
           ],
@@ -498,88 +499,84 @@
           cards: [
             {
               title: "Who I Am",
-              tags: ["Developer", "PM", "AI Explorer"],
+              tags: ["AI App Developer", "RAG", "AgentOps"],
               body: [
-                [{ text: "Bridge between algorithmic logic and user experience.", strong: true }],
-                ["I am a practitioner dedicated to building ", { text: "AI-native applications", strong: true }, ". Moving beyond traditional product definitions, I approach product boundaries through the lens of ", { text: "LLM underlying logic", strong: true }, ". I excel at transforming complex model capabilities into intuitive user experiences, adhering to the principle that \"code drives logic, and product drives value.\" My goal is to create agents that are no longer just \"chatboxes\" but truly autonomous execution engines."],
+                [{ text: "Bridge between model capability, business workflow and operational reliability.", strong: true }],
+                ["I build AI-native applications as complete systems: enterprise RAG for knowledge access, workflow agents for business execution, and AgentOps tooling for trace collection, evaluation, alerts and diagnostic feedback."],
               ],
             },
             {
               title: "Building Capabilities",
-              tags: ["Agent Arch", "Prompt Engineering", "Cross-platform"],
+              tags: ["Next.js", "FastAPI", "LangGraph"],
               body: [
-                [{ text: "Hardcore implementation and methodology.", strong: true }],
-                [{ text: "Agent Architecture Design:", strong: true }, " Proficient in ReAct, SOP, and mainstream frameworks, designing agent systems with complex task decomposition and closed-loop execution."],
-                [{ text: "Advanced Prompt Engineering:", strong: true }, " Expert in multi-modal interaction and context control, optimizing model output through logical chains to enhance performance in vertical domains."],
-                [{ text: "Cross-platform Integration:", strong: true }, " Capable of deeply integrating AI into Mobile (Android) and Web environments, bridging cloud computing with local interaction."],
+                [{ text: "Full-stack implementation around real AI application delivery.", strong: true }],
+                [{ text: "Frontend:", strong: true }, " Next.js 14, React, TypeScript, Tailwind CSS and TanStack Query for dense AI workspaces and streamed interactions."],
+                [{ text: "Backend:", strong: true }, " FastAPI, SQLAlchemy, Pydantic, Alembic, background tasks, SSE APIs and OpenAI-compatible model access."],
+                [{ text: "Agent & data:", strong: true }, " PostgreSQL/pgvector, DashScope embeddings, DeepSeek Chat, LangGraph workflow orchestration, Docker Compose and Nginx deployment."],
               ],
             },
             {
               title: "Current Focus",
-              tags: ["Professional Direction", "Exploration"],
+              tags: ["Retrieval", "Workflow", "Evaluation"],
               body: [
-                [{ text: "Professional depth and frontier perspective.", strong: true }],
-                [{ text: "Mobile AI Evolution:", strong: true }, " Exploring efficient LLM deployment for mobile scenarios to create low-latency, personalized AI assistants accessible anywhere."],
-                [{ text: "Multi-Agent Orchestration:", strong: true }, " Researching multi-agent coordination in complex workflows to improve robustness in long-chain tasks."],
-                [{ text: "Long-term Memory & RAG:", strong: true }, " Optimizing Retrieval-Augmented Generation and memory management, enabling Agents to understand user habits and evolve autonomously."],
+                [{ text: "Making AI systems measurable after they start running.", strong: true }],
+                [{ text: "RAG quality:", strong: true }, " Hybrid Search, Chinese keyword/n-gram recall, lightweight rerank, strict refusal and citation preview."],
+                [{ text: "Workflow Agent:", strong: true }, " natural-language purchase requests, structured draft generation, tool checks, human approval and audit records."],
+                [{ text: "AgentOps:", strong: true }, " Trace ingestion, Python SDK, run-level evaluation, alerting, reports and Copilot-style diagnosis."],
               ],
             },
           ],
         },
         projects: {
           title: "Projects",
-          intro: "Enterprise-grade agent systems, knowledge engines, multimodal copilots, and evaluation suites built around practical intelligence.",
+          intro: "Three deployable AI engineering projects: an enterprise RAG assistant, a procurement workflow Agent, and an AgentOps diagnosis platform for observing and evaluating AI agents.",
           previous: "Previous project",
           next: "Next project",
           open: "Open",
+          github: "GitHub",
+          demo: "Demo",
           cards: [
             {
-              name: "Synapse: Enterprise Workflow Orchestrator",
-              type: "Multi-Agent Orchestration",
-              status: "Product",
-              tags: ["Multi-Agent", "SOP Automation", "Enterprise Architecture"],
-              body: "A sophisticated multi-agent framework designed for complex enterprise workflows. By digitizing SOPs, Synapse decomposes long-chain tasks into sub-tasks handled by specialized agents, ensuring seamless collaboration across document analysis, compliance, and communication.",
-              highlights: [
-                { label: "Dynamic Task Routing", text: "Intent-aware dispatch to the most capable agent." },
-                { label: "State Machine Control", text: "Traceable, interruptible, and rollback-ready agent states." },
-              ],
-              metricLabel: "Orchestrator",
-            },
-            {
-              name: "Lumina: Agentic Knowledge Engine",
-              type: "Agentic RAG System",
+              name: "Enterprise RAG Assistant",
+              type: "Enterprise Knowledge Base Assistant",
               status: "Live",
-              tags: ["GraphRAG", "Knowledge Optimization", "Semantic Understanding"],
-              body: "An advanced knowledge engine that goes beyond basic vector search. Lumina employs agentic reasoning for query expansion and post-retrieval synthesis, leveraging GraphRAG to eliminate hallucinations and enhance accuracy in specialized domains.",
+              tags: ["Next.js", "FastAPI", "pgvector"],
+              body: "A deployable enterprise knowledge-base RAG assistant covering document upload, async parsing, hybrid chunking, DashScope text-embedding-v4, pgvector retrieval, hybrid search, strict refusal, citation preview, multi-turn chat and cloud deployment.",
               highlights: [
-                { label: "Reflection & Self-Correction", text: "Verifies source materials before final output." },
-                { label: "Multi-Vector Strategy", text: "Custom retrieval paths for tables, images, and text." },
+                { label: "Retrieval Quality", text: "Combines vector recall, Chinese keyword/n-gram recall and lightweight rerank." },
+                { label: "Evaluation Loop", text: "Uses 73 golden QA cases to track hit rate, refusal accuracy and keyword coverage." },
               ],
-              metricLabel: "Knowledge",
+              metricLabel: "RAG System",
+              githubUrl: "https://github.com/HarryGuanAI/Enterprise-Rag-Assistant",
+              demoUrl: "http://117.72.45.27",
             },
             {
-              name: "Aura: Vision-Language Copilot",
-              type: "Multi-modal Interaction Lab",
-              status: "Experimental",
-              tags: ["Multi-modal", "Visual Understanding", "Native AI Interaction"],
-              body: "A pioneering \"Vision-as-Input\" co-pilot. Aura interprets real-time screen or camera feeds to analyze UI elements and charts, executing cross-app automations and redefining the boundaries of human-computer interaction.",
+              name: "Enterprise Workflow Agent",
+              type: "Procurement Workflow Agent",
+              status: "Deployed",
+              tags: ["LangGraph", "FastAPI", "Approval Flow"],
+              body: "A business workflow Agent for internal procurement. Users describe purchase needs in natural language; the Agent parses intent, completes structured fields, runs budget, supplier, price and policy checks, then generates a purchase draft for human approval.",
               highlights: [
-                { label: "Visual Grounding", text: "Precise GUI element recognition and operation." },
-                { label: "Multi-modal Fusion", text: "Combines voice commands with visual context." },
+                { label: "Plan-Execute Flow", text: "LangGraph state graph coordinates requirement parsing, missing-info checks and tool calls." },
+                { label: "Enterprise Loop", text: "Keeps manager, finance and procurement approval nodes with notification and audit records." },
               ],
-              metricLabel: "Copilot",
+              metricLabel: "Workflow",
+              githubUrl: "https://github.com/HarryGuanAI/Enterprise-Workflow-Agent",
+              demoUrl: "http://117.72.45.27:8088",
             },
             {
-              name: "Vanguard: Agent Benchmark Suite",
-              type: "Agent Evaluation & Red Teaming",
-              status: "Research",
-              tags: ["LLM Evaluation", "Stress Testing", "AI Safety"],
-              body: "An automated benchmarking suite for Agent performance. Vanguard stress-tests agents using real-world edge cases to evaluate logical consistency, instruction following, and security resilience against prompt injections.",
+              name: "AgentOps Copilot",
+              type: "Agent Observability & Diagnosis",
+              status: "MVP",
+              tags: ["Trace SDK", "Evaluation", "Copilot"],
+              body: "An operations platform for enterprise AI Agents. It ingests traces from RAG and workflow agents, evaluates each run, detects risk events, and provides a diagnostic Copilot that explains evidence and suggests follow-up actions.",
               highlights: [
-                { label: "Red-Teaming AI", text: "Generates adversarial prompts to expose defense gaps." },
-                { label: "Evaluation Dashboard", text: "Tracks success rate, latency, and hallucination rate." },
+                { label: "Trace Ingestion", text: "Python SDK records LLM calls, retrieval, tool calls, LangGraph nodes, latency and cost." },
+                { label: "Diagnosis Loop", text: "Overview, runs, evaluations, alerts, reports and Copilot workspace connect into one console." },
               ],
-              metricLabel: "Benchmark",
+              metricLabel: "AgentOps",
+              githubUrl: "https://github.com/HarryGuanAI/AgentOps-Copilot",
+              demoUrl: "http://117.72.45.27:8090",
             },
           ],
         },
@@ -617,6 +614,7 @@
           projects: "项目",
           resume: "简历",
           hobbies: "兴趣",
+          github: "GitHub",
           contact: "联系我",
           menu: "菜单",
           close: "关闭菜单",
@@ -624,11 +622,11 @@
         },
         hero: {
           badge: "最新",
-          badgeText: "Vibe Code 开发完成并已发布",
-          title: "构建具备思考力的 AI Agent。",
+          badgeText: "AgentOps Copilot 平台已开源并发布",
+          title: "把 AI Agent 从个人工具变成企业的基础设施。",
           subtitle: "让技术回归本质，打造真正有用的智能体。",
           body: [
-            [{ text: "开发者", strong: true }, " | 产品经理 | ", { text: "AI 探索者", strong: true }],
+            [{ text: "开发者", strong: true }, " | 产品经理 | ", { text: "AI 探索者", strong: true }, " | ", { text: "Token 燃烧者", strong: true }],
             ["专注 ", { text: "LLM 应用层开发", strong: true }, "与 ", { text: "Agent 逻辑构建", strong: true }, "。我擅长以提示词为核心、以执行逻辑为驱动，将前沿技术封装为触手可及的生产力工具。"],
             ["当前关注： ", { text: "自主智能体架构", strong: true }, "、", { text: "复杂任务编排", strong: true }, "、AI 交互体验重塑。"],
           ],
@@ -638,88 +636,84 @@
           cards: [
             {
               title: "我是谁",
-              tags: ["开发者", "产品经理", "AI 探索者"],
+              tags: ["AI 应用开发", "RAG", "AgentOps"],
               body: [
-                [{ text: "连接算法逻辑与用户体验的桥梁。", strong: true }],
-                ["我是一名致力于构建 ", { text: "AI 原生应用", strong: true }, " 的实践者。不同于传统的产品定义，我习惯于从 ", { text: "LLM 的底层逻辑", strong: true }, " 出发去思考产品边界。我擅长将复杂的模型能力转化为直观的用户体验，并坚持“代码驱动逻辑，产品驱动价值”的原则。我的目标是打造不再只是“对话框”，而是真正具备自主执行力的智能体。"],
+                [{ text: "连接模型能力、业务流程与运行可靠性。", strong: true }],
+                ["我把 AI 原生应用当成完整系统来做：用企业 RAG 解决知识访问，用业务流程 Agent 执行企业任务，再用 AgentOps 工具采集轨迹、评测质量、发现风险并辅助诊断。"],
               ],
             },
             {
               title: "构建能力",
-              tags: ["Agent 架构", "提示词工程", "跨端落地"],
+              tags: ["Next.js", "FastAPI", "LangGraph"],
               body: [
-                [{ text: "展示硬核技术落地与方法论。", strong: true }],
-                [{ text: "Agent 架构设计：", strong: true }, "深度掌握 ReAct、SOP 等主流框架，能够设计具备复杂任务拆解与闭合执行能力的智能体系统。"],
-                [{ text: "高级提示词工程：", strong: true }, "精通多模态交互及上下文控制，擅长通过逻辑链优化模型输出，提升 AI 在垂直领域的表现。"],
-                [{ text: "多端集成开发：", strong: true }, "具备将 AI 能力深度集成至移动端 (Android) 与 Web 端的能力，实现云端算力与本地交互的无缝对接。"],
+                [{ text: "围绕真实 AI 应用交付的前后端能力。", strong: true }],
+                [{ text: "前端：", strong: true }, "使用 Next.js 14、React、TypeScript、Tailwind CSS、TanStack Query 构建高密度 AI 工作台和流式交互。"],
+                [{ text: "后端：", strong: true }, "使用 FastAPI、SQLAlchemy、Pydantic、Alembic、后台任务、SSE API 和 OpenAI-compatible 模型接入。"],
+                [{ text: "Agent 与数据：", strong: true }, "使用 PostgreSQL/pgvector、DashScope Embedding、DeepSeek Chat、LangGraph、Docker Compose 和 Nginx 完成闭环。"],
               ],
             },
             {
               title: "当前关注",
-              tags: ["专业方向", "前沿探索"],
+              tags: ["检索质量", "流程执行", "自动评测"],
               body: [
-                [{ text: "体现专业深度与行业前瞻视野。", strong: true }],
-                [{ text: "移动端 AI 进化：", strong: true }, "探索 LLM 在移动场景下的高效运行方案，致力于打造随时随地、低延迟的个性化 AI 助手。"],
-                [{ text: "多智能体协同 (Multi-Agent)：", strong: true }, "研究复杂业务流下的多智能体编排，提升 AI 在处理长链路任务时的鲁棒性。"],
-                [{ text: "长效记忆与知识库：", strong: true }, "持续优化 RAG 与长记忆管理，让 Agent 真正理解用户习惯并实现自我进化。"],
+                [{ text: "让 AI 系统跑起来之后仍然可观测、可评测、可追踪。", strong: true }],
+                [{ text: "RAG 质量：", strong: true }, "Hybrid Search、中文关键词/n-gram 召回、轻量 Rerank、严格拒答和引用预览。"],
+                [{ text: "业务 Agent：", strong: true }, "自然语言采购需求、结构化草稿生成、工具校验、人类审批和审计记录。"],
+                [{ text: "AgentOps：", strong: true }, "Trace 采集、Python SDK、运行评测、告警报告和 Copilot 诊断工作区。"],
               ],
             },
           ],
         },
         projects: {
           title: "项目",
-          intro: "围绕企业级智能体编排、知识引擎、多模态交互与 Agent 评估体系展开的产品实验。",
+          intro: "三个可部署的 AI 工程项目：企业知识库 RAG、采购流程 Agent，以及用于观测和评测 Agent 的 AgentOps 诊断平台。",
           previous: "上一个项目",
           next: "下一个项目",
           open: "打开",
+          github: "GitHub",
+          demo: "体验",
           cards: [
             {
-              name: "Synapse: Enterprise Workflow Orchestrator",
-              type: "企业级多智能体协同系统",
-              status: "Product",
-              tags: ["多智能体系统", "SOP 自动化", "企业级架构"],
-              body: "一个面向复杂业务场景的多智能体协同框架。通过定义标准作业程序（SOP），将长链路任务拆解为多个子任务，并分配给具备不同技能（如文档分析、合规审查、邮件自动化）的专业 Agent 协作完成。",
-              highlights: [
-                { label: "动态路由机制", text: "基于意图识别自动分发任务至最优 Agent。" },
-                { label: "状态机控制", text: "确保 Agent 在复杂任务中的状态可追溯、可干预、可回滚。" },
-              ],
-              metricLabel: "编排",
-            },
-            {
-              name: "Lumina: Agentic Knowledge Engine",
-              type: "高性能增强检索 Agent",
+              name: "Enterprise RAG Assistant",
+              type: "企业知识库智能问答系统",
               status: "Live",
-              tags: ["GraphRAG", "知识库优化", "语义理解"],
-              body: "超越传统向量检索的高级知识引擎。引入 Agent 逻辑进行“检索前查询重写”与“检索后信息合成”，并结合知识图谱（GraphRAG）技术，解决大模型在处理专业领域知识时的长尾效应与幻觉问题。",
+              tags: ["Next.js", "FastAPI", "pgvector"],
+              body: "一个可部署、可开源、可在线体验的企业知识库 RAG 助手，覆盖文档上传、异步解析、混合分块、DashScope text-embedding-v4、pgvector 检索、Hybrid Search、严格拒答、引用溯源、多轮对话和云服务器部署。",
               highlights: [
-                { label: "反思与校对", text: "Agent 在输出前自动核对原始文献，确保事实准确度。" },
-                { label: "多维向量策略", text: "针对不同类型文档（表格、图像、文本）定制化检索路径。" },
+                { label: "检索质量", text: "融合向量召回、中文关键词/n-gram 召回和轻量 Rerank。" },
+                { label: "评测闭环", text: "用 73 条 golden QA 跟踪命中率、拒答准确率和关键词覆盖。" },
               ],
-              metricLabel: "知识",
+              metricLabel: "RAG 系统",
+              githubUrl: "https://github.com/HarryGuanAI/Enterprise-Rag-Assistant",
+              demoUrl: "http://117.72.45.27",
             },
             {
-              name: "Aura: Vision-Language Copilot",
-              type: "多模态交互实验室",
-              status: "Experimental",
-              tags: ["多模态应用", "视觉理解", "原生 AI 交互"],
-              body: "一款探索“视觉即输入”的智能助手原型。通过实时捕获屏幕或相机流，Agent 能够理解 UI 界面、分析图表并直接进行跨应用的自动化操作，重新定义人机交互的边界。",
+              name: "Enterprise Workflow Agent",
+              type: "企业采购流程 Agent",
+              status: "Deployed",
+              tags: ["LangGraph", "FastAPI", "审批流"],
+              body: "一个面向企业内部采购申请与审批的业务流程 Agent。用户用自然语言提出采购需求，Agent 解析意图、补全结构化字段，调用预算、供应商、价格和规则校验工具，并生成采购申请草稿进入人工审批。",
               highlights: [
-                { label: "视觉定位技术", text: "解决 Agent 在复杂 GUI 界面中的精准操作与元素识别问题。" },
-                { label: "多模态融合理解", text: "结合语音指令与视觉上下文，实现更自然的意图理解。" },
+                { label: "Plan-Execute 流程", text: "用 LangGraph 状态图编排需求解析、缺失信息检查和工具调用。" },
+                { label: "企业闭环", text: "保留经理、财务、采购等人工审批节点，并记录通知与审计信息。" },
               ],
-              metricLabel: "交互",
+              metricLabel: "流程",
+              githubUrl: "https://github.com/HarryGuanAI/Enterprise-Workflow-Agent",
+              demoUrl: "http://117.72.45.27:8088",
             },
             {
-              name: "Vanguard: Agent Benchmark Suite",
-              type: "智能体性能评估与红蓝对抗",
-              status: "Research",
-              tags: ["LLM 评估", "压力测试", "AI 安全"],
-              body: "一个自动化的 Agent 性能评估工具集。通过模拟真实世界的极端用例（Edge Cases）对智能体进行压力测试，评估其逻辑一致性、指令遵循能力以及防注入安全水平。",
+              name: "AgentOps Copilot",
+              type: "Agent 可观测与智能诊断平台",
+              status: "MVP",
+              tags: ["Trace SDK", "自动评测", "诊断助手"],
+              body: "一个面向企业 AI Agent 的运行观测、自动评测与诊断平台。系统采集 RAG 助手和业务流程 Agent 的运行轨迹，评估每次运行质量，发现异常行为，并通过诊断助手给出证据说明和优化建议。",
               highlights: [
-                { label: "红蓝对抗测试", text: "自动化生成对抗性提示词，检测 Agent 的防御漏洞。" },
-                { label: "多维评估看板", text: "为产品上线提供量化的逻辑成功率、响应延迟与幻觉率报告。" },
+                { label: "Trace 采集", text: "Python SDK 记录 LLM 调用、检索、工具调用、LangGraph 节点、延迟和成本。" },
+                { label: "诊断闭环", text: "总览、运行追踪、评测中心、告警报告和 Copilot 工作区串成控制台。" },
               ],
-              metricLabel: "评估",
+              metricLabel: "AgentOps",
+              githubUrl: "https://github.com/HarryGuanAI/AgentOps-Copilot",
+              demoUrl: "http://117.72.45.27:8090",
             },
           ],
         },
@@ -766,6 +760,7 @@
         { label: c.projects, href: "#projects" },
         { label: c.resume, href: "Files/resume.pdf", download: "Resume.pdf" },
         { label: c.hobbies, href: "#hobbies" },
+        { label: c.github, href: "https://github.com/HarryGuanAI", external: true },
       ];
       return (
         <nav className="fixed top-4 left-0 right-0 z-[9999] px-4 md:px-8 lg:px-16">
@@ -775,7 +770,7 @@
             </a>
             <div className="liquid-glass absolute left-1/2 hidden min-w-0 -translate-x-1/2 items-center rounded-full px-1.5 py-1.5 lg:flex">
               {links.map((link) => (
-                <a key={link.href} href={link.href} download={link.download} className="px-3 py-2 text-sm font-medium text-white/90 font-body whitespace-nowrap">
+                <a key={link.href} href={link.href} download={link.download} target={link.external ? "_blank" : undefined} rel={link.external ? "noopener noreferrer" : undefined} className="px-3 py-2 text-sm font-medium text-white/90 font-body whitespace-nowrap">
                   {link.label}
                 </a>
               ))}
@@ -816,6 +811,8 @@
                       key={link.href}
                       href={link.href}
                       download={link.download}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
                       onClick={() => setMenuOpen(false)}
                       className="rounded-[0.9rem] px-4 py-3 text-base font-medium text-white/92 font-body"
                     >
@@ -977,13 +974,13 @@
     }
     window.Capabilities = Capabilities;
 
-    function ProjectCard({ project, openLabel }) {
+    function ProjectCard({ project, labels }) {
       return (
         <motion.article
           {...entrance}
-          className="liquid-glass interactive-card relative flex h-[40rem] min-w-[20rem] flex-col rounded-[1.25rem] p-5 md:min-w-[25rem] lg:min-w-[28rem]"
+          className="liquid-glass interactive-card relative flex h-[34rem] min-w-[20rem] flex-col rounded-[1.25rem] p-5 md:min-w-[25rem] lg:min-w-[28rem]"
         >
-          <div className="relative h-52 overflow-hidden rounded-[1rem] bg-black">
+          <div className="relative h-44 overflow-hidden rounded-[1rem] bg-black">
             <img src={project.cover} alt="" className="h-full w-full object-cover opacity-80" />
             <div className="absolute inset-0 bg-black/35" />
             <div className="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-xs font-semibold text-black font-body">{project.status}</div>
@@ -1000,24 +997,29 @@
                 <span key={tag} className="liquid-glass rounded-full px-3 py-1 text-xs font-medium text-white/90 font-body">{tag}</span>
               ))}
             </div>
-            <p className="mt-5 max-w-[38ch] text-sm font-light leading-[1.34] text-white/85 font-body md:text-[14px]">{project.body}</p>
+            <p className="mt-4 max-w-[38ch] overflow-hidden text-sm font-light leading-[1.3] text-white/85 font-body md:text-[14px]" style={{ display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical" }}>{project.body}</p>
             {project.highlights && (
-              <div className="mt-5 space-y-2">
+              <div className="mt-4 space-y-1.5">
                 {project.highlights.map((highlight) => (
-                  <p key={highlight.label} className="text-xs font-light leading-snug text-white/78 font-body md:text-[12px]">
+                  <p key={highlight.label} className="overflow-hidden text-xs font-light leading-snug text-white/78 font-body md:text-[12px]" style={{ display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>
                     <strong className="font-semibold text-white">{highlight.label}:</strong> {highlight.text}
                   </p>
                 ))}
               </div>
             )}
-            <div className="mt-auto flex items-end justify-between pt-5">
+            <div className="mt-auto flex items-end justify-between gap-4 pt-4">
               <div>
                 <div className="text-4xl italic leading-none text-white font-heading">{project.metric}</div>
                 <div className="mt-1 text-xs uppercase tracking-[0.18em] text-white/55 font-body">{project.metricLabel}</div>
               </div>
-              <button className="liquid-glass flex h-11 w-11 items-center justify-center rounded-full text-white" type="button" aria-label={`${openLabel} ${project.name}`}>
-                <ArrowUpRight className="h-5 w-5" />
-              </button>
+              <div className="flex shrink-0 items-center gap-2">
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="liquid-glass rounded-full px-3.5 py-2 text-xs font-semibold text-white font-body" aria-label={`${labels.github} ${project.name}`}>
+                  {labels.github}
+                </a>
+                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="liquid-glass flex items-center gap-1 rounded-full px-3.5 py-2 text-xs font-semibold text-white font-body" aria-label={`${labels.demo} ${project.name}`}>
+                  {labels.demo} <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
+              </div>
             </div>
           </div>
         </motion.article>
@@ -1032,20 +1034,16 @@
       const c = copy[lang].projects;
       const projectMeta = [
         {
-          cover: "Images/product-screenshots/第一个项目.webp",
+          cover: "Images/product-screenshots/enterprise-rag-assistant.svg",
           metric: "01",
         },
         {
-          cover: "Images/product-screenshots/第2个项目.webp",
-          metric: "12",
+          cover: "Images/product-screenshots/enterprise-workflow-agent.png",
+          metric: "02",
         },
         {
-          cover: "Images/product-screenshots/aura.webp",
+          cover: "Images/product-screenshots/agentops-copilot.png",
           metric: "03",
-        },
-        {
-          cover: "Images/product-screenshots/vanguard.webp",
-          metric: "AI",
         },
       ];
       const projects = c.cards.map((project, index) => ({ ...projectMeta[index], ...project }));
@@ -1089,7 +1087,7 @@
             <div ref={railRef} className="-mx-4 mt-10 flex snap-x items-stretch gap-6 overflow-x-auto scroll-smooth px-4 py-4 pb-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {projects.map((project) => (
                 <div key={project.name} className="flex snap-start px-1">
-                  <ProjectCard project={project} openLabel={c.open} />
+                  <ProjectCard project={project} labels={{ github: c.github, demo: c.demo }} />
                 </div>
               ))}
             </div>
